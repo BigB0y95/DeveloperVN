@@ -4,7 +4,7 @@ section a{
 aside a{
     color: #0288d1 !important;
 }
-a:hover{
+section a:hover, aside a:hover{
     text-decoration: none;
     color: #d14b02 !important;
 }
