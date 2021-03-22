@@ -1,0 +1,24 @@
+{% extends "base_sub.html" %}
+{% load static %}
+{% block title %}DangKy{% endblock %}
+<!-- body -->
+{% block body %}
+<body class="text-center" style="background-image: url({% static 'image/background/sign_in.png' %})">
+    <form class="form-register">
+        <a href="\trangchu"><img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"></a>
+        <h1 class="h3 mb-3 font-weight-normal">Đăng Ký Tài Khoản</h1>
+        <h1 class="h3 mb-3 font-weight-normal">Vui Lòng Điền Thông Tin</h1>
+        <p class="mt_t10 text-muted text-left nomargin_bottom">Nhập địa chỉ Email</p>
+        <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Địa chỉ Email" required="" autofocus="">
+        <p class="mt_t10 text-muted text-left nomargin_bottom">Nhập mật khẩu</p>
+        <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Mật Khẩu" required="">
+        <p class="mt_t10 text-muted text-left nomargin_bottom">Xác nhận mật khẩu</p>
+        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Xác Nhận Mật Khẩu" required="">     
+        <button class="btn btn-lg btn-rs btn-block mt_t30 bold" type="submit">Đăng Ký</button>
+        <div class="text-left mt_t10 bold">
+            <a href="\dangnhap" class="blue">Tôi đã có tài khoản!</a>
+        </div>
+        <p class="mt-5 text-muted">© 2021 All rights reserved.<br>Designed by DeveloperVN.</p>
+    </form>
+</body>
+{% endblock %}

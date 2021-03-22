@@ -1,0 +1,70 @@
+{% extends "base_sub.html" %}
+{% load static %}
+{% block title %}GioiThieu{% endblock %}
+<!-- body -->
+{% block body %}
+<body style="background-image: url({% static 'image/about/about03.jpg' %})">
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+        <!-- navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg_trans fixed-top">
+                <div class="container">
+                    <a class="navbar-brand" href="\trangchu">DeveloperVN</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarsExample07">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="\trangchu">Trang Chủ <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Khóa Học</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown07">
+                                    <a class="dropdown-item drop_hearder" href="#">Python</a>
+                                    <a class="dropdown-item drop_hearder" href="#">ReactJS</a>
+                                    <a class="dropdown-item drop_hearder" href="#">GoLang</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="\gioithieu">Chia Sẻ Kiến Thức</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="\gioithieu">Giới Thiệu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Liên Hệ</a>
+                            </li>                           
+                        </ul>
+                    <form class="form-inline my-2 my-md-0">
+                        <button class="btn btn-sm btn-rs text-while" formaction ="\dangky">Đăng Ký</button>
+                        <button class="btn btn-sm btn-rs text-while" formaction ="\dangnhap">Đăng Nhập</button>
+                    </form>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main role="main" class="inner cover">           
+            <h1 class="cover-heading">Developer Việt Nam</h1>
+            <p class="lead">Chúng tôi tạo ra Developer Việt Nam mục đích để cung cấp các bài học về lập trình từ cơ bản đến nâng cao. Giúp những ai đang cần tìm hiểu về ngôn ngữ mới</p>
+            
+        </main>
+
+        <footer class="mastfoot mt-auto text-center">
+            <div class="row footer_btn">
+                <button type="button" class="btn btn-primary btn-lg mr_20 mt_t10">Liên Hệ Chúng Tôi</button>
+                <div class="btn-group mt_t10">
+                    <button type="button" class="btn-lg btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Khóa Học</button> 
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Python</a>
+                        <a class="dropdown-item" href="#">ReactJS</a>
+                        <a class="dropdown-item" href="#">GoLang</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+{% endblock %}
