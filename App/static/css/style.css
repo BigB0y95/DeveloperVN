@@ -1,6 +1,13 @@
 section a{
     color: #0288d1 !important;
 }
+aside a{
+    color: #0288d1 !important;
+}
+a:hover{
+    text-decoration: none;
+    color: #d14b02 !important;
+}
 .title_header{
     margin-left: 10px;
 }
@@ -140,7 +147,7 @@ video{
 .commnet .title_comment{
     border-top: 2px solid #AFAFAF;
 }
-.lesson_more{
+.lesson_more, .subject_more{
     border: 1px solid black;
     width: 100%;
 }
@@ -148,7 +155,7 @@ video{
     display: -webkit-box;
     flex-wrap: wrap;
 }
-.les_header{
+.les_header, .sub_header{
     width: 100%;
     height: auto;
     color: unset;
