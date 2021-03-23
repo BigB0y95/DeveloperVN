@@ -7,7 +7,7 @@ from Register import views as register
 from Subjects import views as subjects
 from Lesson import views as lesson
 
-urlpatterns = {
+urlpatterns = [
     path('', views.index),
     path('trangchu', home.get_page_home),
     path('gioithieu', about.get_page_about),
@@ -15,4 +15,4 @@ urlpatterns = {
     path('dangky', register.get_page_register),
     path('khoahoc', subjects.get_page_subject),
     path('baihoc', lesson.get_lesson_by_id)
-}
+]

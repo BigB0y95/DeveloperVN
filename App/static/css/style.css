@@ -8,6 +8,10 @@ section a:hover, aside a:hover{
     text-decoration: none;
     color: #d14b02 !important;
 }
+.container-fluid{
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}
 .title_header{
     margin-left: 10px;
 }
@@ -156,11 +160,15 @@ video{
     flex-wrap: wrap;
 }
 .les_header, .sub_header{
+    background-color: #417690;   
     width: 100%;
     height: auto;
     color: unset;
     font-weight: bold; 
     border-bottom: 1px solid black;
+}
+.les_header h4, .sub_header h4{
+    color: antiquewhite;
 }
 .lesson_more .les_content{
     width: 100%;
@@ -174,7 +182,7 @@ video{
     height: auto;
 }
 .title_more{
-    width: 68%;
+    width: 65%;
 }
 .lesson_next_more{
     width: 100%;

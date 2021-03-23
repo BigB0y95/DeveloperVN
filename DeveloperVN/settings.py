@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'Register',
     'Subjects',
     'Lesson',
+    'Members',
     
 ]
 
@@ -83,8 +84,11 @@ WSGI_APPLICATION = 'DeveloperVN.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'DeveloperVN',
+        'USER': 'root',
+        'PASSWORD': '1234$',
+        'HOST': 'localhost',
     }
 }
 

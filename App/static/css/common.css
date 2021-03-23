@@ -53,3 +53,6 @@ body{
 .font_size_init{
     font-size:initial;
 }
+.display_none{
+    display: none;
+}

@@ -1,18 +1,20 @@
-// permanent navbar
-jQuery(document).ready(function($) {
-    $(window).load(function() {
-        if ($('.navbar').length > 0) {
-            var _top = $('.navbar').offset().top - parseFloat($('.navbar').css('marginTop').replace(/auto/, 0));
-            $(window).scroll(function(evt) {
-                var _y = $(this).scrollTop();
-                if (_y > _top) {
-                    $('.navbar').addClass('fixed');
-                    $('.main-1').css("margin-top", "30px")
-                } else {
-                    $('.navbar').removeClass('fixed');
-                    $('.main-1').css("margin-top", "0")
-                }
-            })
-        }
+// check password when register
+$(document).ready(function () {
+    $("#register_btn").click(function (){
+        var password = $("#password").val();
+        var confirmPassword = $("#confirmPassword").val();
+        if(password.length < 6 || password.length > 20){
+            $("#mes_err_pass1").removeClass("display_none");
+            $("#mes_err_pass2").addClass("display_none");
+            return false;
+        }else{
+            if(password == confirmPassword){
+                return true;
+            }else{
+                $("#mes_err_pass2").removeClass("display_none");
+                $("#mes_err_pass1").addClass("display_none");
+                return false;           
+            }
+        }     
     });
 });
