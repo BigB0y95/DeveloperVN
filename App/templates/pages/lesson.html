@@ -1,18 +1,12 @@
 {% extends "base_les.html" %}
 {% load static %}
 {% block title %}GioiThieu{% endblock %}
-<!-- banner -->
-{% block banner %}
-    <div id="banner_sub">
-        <img class="d-block w-100" src="{% static 'image/banner/sub_banner/python.png' %}" alt="Khóa Học Python">
-    </div>
-{% endblock %}
 <!-- article -->
 {% block article %}
 <article class="col-md-9 col-sm-12 article_area mt_t10">   
-    <div class="row mb_20">
+    <div class="row mb_20 padding_lr15">
         <div class="title_header">
-            <h2 class="mb-0 bold">Python Cơ Bản</h2>
+            <h3 class="mb-0 bold">Python Cơ Bản</h3>
         </div>
     </div>
     
@@ -20,16 +14,38 @@
     <section class="md-section">
         <!-- lesson content -->
         <div class="title_lesson">
-            <h4 class="strong_blue">Bài 1: Giới Thiệu</h4>
+            <h5 class="strong_blue">Bài 1: Giới Thiệu</h5>
         </div>
         <div class="video_lesson">
             <video></video>
         </div>
-        <div class="content_lesson">
-            <h4>Nội dung chính</h4>
-            <p>1. Giới thiệu về ngôn ngữ Python</p>
-            <p>2. Cài đặt tool và môi trường</p>
-            <p>3. Viết chương trình đầu tiên và chạy thành công công chương trình</p>
+        <div class="info_lesson mt_t10 row_mr0">
+            <div class="row_mr0">
+                <p>100 lượt xem</p>
+            </div>
+            <div class="author ml_20">
+                <p><b>Tác giả:</b> Developer Việt Nam</p>
+            </div>
+        </div>
+        <div class="change row_mr0 mt_t10">
+            <div class="previous_lesson mr_10">
+                <button class="btn btn-sm btn-rs text-while" title="bài học trước"><i class="fas fa-angle-double-left"></i></button>
+            </div>
+            <div class="next_lesson">
+                <button class="btn btn-sm btn-rs text-while" title="bài học sau"><i class="fas fa-angle-double-right"></i></i></button>
+            </div>
+        </div>
+        <div class="content_lesson mb_20 mt_t10">
+            <div class="card box-shadow">
+                <div class="card-header">
+                    <h4>Nội dung chính</h4>
+                </div>
+                <div class="card-body">
+                    <p>1. Giới thiệu về ngôn ngữ Python</p>
+                    <p>2. Cài đặt tool và môi trường</p>
+                    <p>3. Viết chương trình đầu tiên và chạy thành công công chương trình</p>
+                </div>
+            </div>
         </div>
         <!-- google advertisement -->
         <div class="gooogle_adv_hori">
@@ -78,27 +94,50 @@
 {% block aside %}
 <aside class="col-md-3 col-sm-12 aside_area mt_t10">
     <!-- facebook -->
-    <div id="fb-root"></div>
+    <!-- <div id="fb-root"></div>
     <div class="fb-page" data-href="https://www.facebook.com/Developer-Vi%E1%BB%87t-Nam-109512397877362" 
     data-tabs="timeline" data-width="" data-height="130px" data-small-header="false" data-adapt-container-width="true" 
     data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Developer-Vi%E1%BB%87t-Nam-109512397877362" 
-    class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Developer-Vi%E1%BB%87t-Nam-109512397877362">Developer Việt Nam</a></blockquote></div>
+    class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Developer-Vi%E1%BB%87t-Nam-109512397877362">Developer Việt Nam</a></blockquote></div> -->
+    <!-- google advertisement -->
+    <!-- <div class="gooogle_adv_verti mt_t10">
+        <img src="{% static 'image/google_adv/01.jpg' %}" alt="">
+    </div> -->
+    <!-- subject more -->
+    <div class="card box-shadow subject_more mt_t10">
+        <!-- header -->
+        <div class="card-header sub_header">
+            <h4>Khóa học khác</h4>
+        </div>
+        <div class="card-body sub_content nopadding">
+            <div class="row_mr0">
+                <div class="col-md-4 col-sm-4 padding_10">
+                    <div class="textbox__image" style="background-image: url({% static 'image/background/yellow.jpg' %})">
+                        <a href="\khoahoc"><img src="{% static  'image/session/python.png' %}" alt="python"></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 padding_10">
+                    <div class="textbox__image" style="background-image: url({% static 'image/background/yellow.jpg' %})">
+                        <a href="#"><img src="{% static  'image/session/reactjs.png' %}" alt="reactjs"></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 padding_10">
+                    <div class="textbox__image" style="background-image: url({% static 'image/background/yellow.jpg' %})">
+                        <a href="#"><img src="{% static  'image/session/golang.png' %}" alt="reactjs"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- google advertisement -->
     <div class="gooogle_adv_verti mt_t10">
         <img src="{% static 'image/google_adv/01.jpg' %}" alt="">
-    </div>
-    <!-- subject more -->
-    <div class="subject_more mt_t10">
-        <!-- header -->
-        <div class="sub_header padding_5">
-            <h4 class="bold">Khóa học khác</h4>
-        </div>
     </div>
     <!-- lesson more -->
     <div class="lesson_more mt_t10">
         <!-- header -->
         <div class="les_header padding_5">
-            <h4 class="bold">Xem nhiều</h4>
+            <h4><i class="fas fa-list mr_10"></i>Bài học liên quan</h4>
         </div>     
         <!-- content --> 
         <div class="les_content padding_5">
@@ -145,9 +184,6 @@
                 <div class="title_more">
                     <a href="#"><h5 class="font_size_init" alt="Bài 6: Giới Thiệu">Bài 6: Giới Thiệu</h5></a>
                 </div>
-            </div>
-            <div class="les_more_total">
-                <a href ="#">Xem thêm</a>
             </div>
         </div>
     </div>

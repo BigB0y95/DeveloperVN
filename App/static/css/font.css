@@ -1,0 +1,40 @@
+@media only screen and (max-width: 800px){
+    h1 {
+        font-size: 30px !important;
+    }
+    h2 {
+        font-size: 25px !important;
+    }
+    h3 {
+        font-size: 20px !important;
+    }
+    h4 {
+        font-size: 17px !important;
+    }
+    h5 {
+        font-size: 15px !important;
+    }
+    footer p {
+        font-size: 12px !important;
+    }
+}
+@media only screen and (max-width: 1024px){
+    h1 {
+        font-size: 35px !important;
+    }
+    h2 {
+        font-size: 28px !important;
+    }
+    h3 {
+        font-size: 23px !important;
+    }
+    h4 {
+        font-size: 19px !important;
+    }
+    h5 {
+        font-size: 17px !important;
+    }
+    footer p {
+        font-size: 14px !important;
+    }
+}

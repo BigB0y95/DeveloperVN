@@ -15,6 +15,7 @@
         <!-- css  self-defined-->
         <link rel="stylesheet" href="{% static 'css/common.css' %}">
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/font.css' %}">
 
         <!-- java script library-->
         <script src="{% static 'js/jquery-3.4.0.min.js' %}"></script>
@@ -23,6 +24,7 @@
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
         <!-- java script self-defined -->
         <script src="{% static 'js/common.js' %}"></script>
+        <script src="{% static 'js/style.js' %}"></script>
         
     </head>
     <body>
@@ -44,24 +46,20 @@
         <footer class="bg-dark bg-cover footer mt_t30">
             <div class="py-6">
                 <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-12 col-12 col-lg-12 col-xl-6">
-                            <!-- Copyright -->
-                            <p class="font-size-xxs text-muted">
-                                © 2021 All rights reserved. Designed by DeveloperVN.
-                            </p>
-                        </div>
-                        <div class="ml_20 contact_footer">
-                            <!-- Payment methods -->
+                    <!-- Copyright -->
+                    <p class="font-size-xxs text-muted">
+                        © Bản quyền thuộc về <b>Developer Việt Nam</b>. Thiết kế và hoàn thiện bởi <b>Developer Việt Nam</b>.
+                    </p>
+                        <!-- <div class="ml_20 contact_footer">
                             <a href="#"><img class="footer-payment" src="{% static 'image/icon/facebook.png' %}" alt="facebook"></a>
                             <a href="#"><img class="footer-payment" src="{% static 'image/icon/google+.png' %}" alt="google"></a>
                             <a href="#"><img class="footer-payment" src="{% static 'image/icon/youtube.png' %}" alt="youtube"></a>
                             <a href="#"><img class="footer-payment" src="{% static 'image/icon/skype.png' %}" alt="skype"></a>
                             <a href="#"><img class="footer-payment" src="{% static 'image/icon/twitter.png' %}" alt="twitter"></a>
-                        </div>
-                    </div>
+                        </div> -->
                 </div>
             </div>
         </footer>
+        <button id="topBtn" title="Lên đầu trang"><i class="fas fa-angle-double-up font_size_30"></i></button>
     </body>
 </html>

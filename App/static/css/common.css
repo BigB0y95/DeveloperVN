@@ -26,11 +26,23 @@ body{
 .mr_5{
     margin-right: 5px;
 }
+.mr_10{
+    margin-right: 10px;
+}
 .mr_20{
     margin-right: 20px;
 }
 .padding_5{
     padding: 5px 5px !important;
+}
+.padding_10{
+    padding: 10px 10px !important;
+}
+.padding_lr15{
+    padding: 0px 15px;;
+}
+.nopadding{
+    padding: 0 !important;
 }
 .nomargin_bottom{
     margin-bottom: 0px !important;
@@ -55,4 +67,18 @@ body{
 }
 .display_none{
     display: none;
+}
+.row_mr0{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+.float_right{
+    float: right;
+}
+.float_left{
+    float: left;
+}
+.font_size_30{
+    font-size: 30px;
 }
