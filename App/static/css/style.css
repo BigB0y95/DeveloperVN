@@ -228,4 +228,9 @@ video{
   
 #topBtn:hover {
     background-color: red;
-  }
+}
+.btn-black-des{
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+}

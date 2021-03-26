@@ -12,7 +12,9 @@ urlpatterns = [
     path('gioithieu', about.get_page_about),
     path('dangnhap', member.get_page_login),
     path('dangky', member.get_page_register),
-    path('register', member.register),
+    path('dangkythanhvien', member.register),
+    path('dangnhaptaikhoan', member.login_user),
+    path('dangxuat', member.logout_user),
     path('khoahoc', subjects.get_page_subject),
     path('baihoc', lesson.get_lesson_by_id)
 ]

@@ -12,8 +12,6 @@ class Member(models.Model):
     status = models.BooleanField()
     activeCount = models.IntegerField(null=True)
 
-    class Meta:
-        ordering = ("id", "email", "password", "birthday", "userName", "sex", "point", "dateCreate", "status", "activeCount")
     def __str__(self):
         return f"{self.email}, {self.password}, {self.birthday}, {self.userName}, {self.sex}, {self.point}, {self.dateCreate}, {self.status}, {self.activeCount}"
 

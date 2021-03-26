@@ -4,14 +4,16 @@
 <!-- body -->
 {% block body %}
 <body class="text-center" style="background-image: url({% static 'image/background/sign_in.png' %})">
-    <form class="form-signin">
+    <form class="form-signin" action="\dangnhaptaikhoan" method="post">
+        {% csrf_token %}
         <a href="\trangchu"><img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"></a>
         <h1 class="h3 mb-3 font-weight-normal">Vui Lòng Nhập Tài Khoản</h1>
-        <label for="inputEmail" class="sr-only">Địa chỉ Email</label>
-        <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Địa chỉ Email" required="" autofocus="">
-        <label for="inputPassword" class="sr-only">Mật Khẩu</label>
-        <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Mật Khẩu" required="">
+        <label for="email" class="sr-only">Địa chỉ Email</label>
+        <input type="text" id="account" name="account" class="form-control" placeholder="Tên người dùng/ Địa chỉ Email" required="" autofocus="">
+        <label for="password" class="sr-only">Mật Khẩu</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Mật Khẩu" required="">
         <div class="text-left">
+            <p class="red">{{ message }}</p>
             <a href="#" class="blue">Quên mật khẩu?</a>
         </div>      
         <button class="btn btn-lg btn-rs btn-block mt_t30 bold" type="submit">Đăng Nhập</button>

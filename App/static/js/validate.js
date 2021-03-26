@@ -6,15 +6,17 @@ $(document).ready(function () {
         if(password.length < 6 || password.length > 20){
             $("#mes_err_pass1").removeClass("display_none");
             $("#mes_err_pass2").addClass("display_none");
+            $("#password").focus();
             return false;
         }else{
-            if(password == confirmPassword){
-                return true;
-            }else{
+            if(password != confirmPassword){
                 $("#mes_err_pass2").removeClass("display_none");
                 $("#mes_err_pass1").addClass("display_none");
-                return false;           
+                $("#confirmPassword").focus();
+                return false;                 
+            }else{
+                return true;        
             }
-        }     
+        }
     });
 });

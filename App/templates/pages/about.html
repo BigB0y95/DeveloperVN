@@ -41,8 +41,23 @@
                             </li>                        
                         </ul>
                     <form class="form-inline my-2 my-md-0">
-                        <button class="btn btn-sm btn-rs text-while" formaction ="\dangky">Đăng Ký</button>
-                        <button class="btn btn-sm btn-rs text-while" formaction ="\dangnhap">Đăng Nhập</button>
+                        {% if user.username != ''%}
+                            <div class="btn-group mr_30">
+                                <button class="btn btn-black-des btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{ user.username}}
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#"><i class="fas fa-info-circle mr_5"></i>Thông tin</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-key mr_5"></i>Đổi mật khẩu</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="\dangxuat"><i class="fas fa-sign-out-alt mr_5"></i>Đăng xuất</a>
+                                </div>
+                            </div>
+
+                        {% elif user.username == ''%}
+                            <button class="btn btn-sm btn-rs text-while" formaction ="\dangky">Đăng Ký</button>
+                            <button class="btn btn-sm btn-rs text-while" formaction ="\dangnhap">Đăng Nhập</button>
+                        {% endif %}
                     </form>
                     </div>
                 </div>
