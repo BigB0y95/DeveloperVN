@@ -173,7 +173,7 @@ video{
     width: 100%;
 }
 .les_content .video_more{
-    width: 30%;
+    width: 40%;
     height: auto;
 }
 .les_content .video_more video{
@@ -181,7 +181,7 @@ video{
     height: auto;
 }
 .title_more{
-    width: 65%;
+    width: 55%;
 }
 .lesson_next_more{
     width: 100%;

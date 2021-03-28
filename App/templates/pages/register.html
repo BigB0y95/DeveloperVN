@@ -17,11 +17,11 @@
         </div>
         {% endif%}
         <p class="mt_t10 text-muted text-left nomargin_bottom">Nhập tên người dùng</p>
-        <input type="text" id="userName" name="userName" class="form-control" placeholder="Tên người dùng" required="">
+        <input type="text" id="userName" name="userName" class="form-control" placeholder="Tên người dùng" required="" maxlength = 25>
         <p class="mt_t10 text-muted text-left nomargin_bottom">Nhập mật khẩu (6-20 ký tự)</p>
-        <input type="password" id="password" name="password" class="form-control" placeholder="Mật Khẩu" required="">
+        <input type="password" id="password" name="password" class="form-control" maxlength = 20 minlength = 6 placeholder="Mật Khẩu" required="">
         <p class="mt_t10 text-muted text-left nomargin_bottom">Xác nhận mật khẩu</p>
-        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Xác Nhận Mật Khẩu" required="">
+        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" maxlength = 20 minlength = 6 placeholder="Xác Nhận Mật Khẩu" required="">
         <div class="text-left">
             <p class="red display_none" id="mes_err_pass1">Mật khẩu phải từ 6-20 ký tự!</p>
             <p class="red display_none" id="mes_err_pass2">Mật khẩu không khớp nhau!</p>

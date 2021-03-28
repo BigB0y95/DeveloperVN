@@ -30,6 +30,7 @@ def register(request):
 def login_user(request):
     account = request.POST['account']
     password = request.POST['password']
+    #member = member_model.objects.filter(email = account, password = password, status = True)
     try:
         user = authenticate(request, username = User.objects.get(email = account), password = password)
     except:
@@ -42,4 +43,5 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
-    return redirect('/trangchu')
+    url_present = request.path
+    return redirect(url_present)

@@ -16,13 +16,16 @@ $(document).ready(function() {
         event.preventDefault();
         $("html, body").animate({ scrollTop: 0 }, "slow");
         return false;
-    });
-    // add active navbar when click
-    $("li .home").click(function(){
-      //Remove any previous active classes
-      $('li .nav-item').removeClass('active');
-      //Add active class to the clicked item
-      $(this).addClass('active');
-    });
+    }); 
 });
-
+$(document).ready(function() {
+  var url = window.location.href;
+  alert(url);
+  if(url.indexOf('trangchu') > -1){
+      $("#home").addClass('active');
+  }
+  else if(url.indexOf('gioithieu') > -1){
+      $("#home").removeClass('active');
+      $("#about").addClass('active');
+  }
+});
