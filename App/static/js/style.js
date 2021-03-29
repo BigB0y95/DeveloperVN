@@ -20,12 +20,19 @@ $(document).ready(function() {
 });
 $(document).ready(function() {
   var url = window.location.href;
-  alert(url);
   if(url.indexOf('trangchu') > -1){
+      $("#about").removeClass('active');
+      $('#course').removeClass('active');
       $("#home").addClass('active');
   }
   else if(url.indexOf('gioithieu') > -1){
       $("#home").removeClass('active');
+      $('#course').removeClass('active');
       $("#about").addClass('active');
   }
+  else if(url.indexOf('khoahoc') > -1){
+      $("#home").removeClass('active');
+      $("#about").removeClass('active');
+      $('#course').addClass('active');
+}
 });

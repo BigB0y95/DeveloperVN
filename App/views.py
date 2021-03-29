@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from Subjects.models import Subjects as subjects
+from Home.models import Course as course
 # Create your views here.
 def index(request):
-    subjectList = subjects.objects.all()
-    return render(request, 'pages/home.html', {'subjectList' : subjectList})
+    course_list = course.objects.all()
+    return render(request, 'pages/home.html', {'course_list' : course_list})
+
