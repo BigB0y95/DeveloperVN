@@ -4,7 +4,7 @@ from Subjects.models import Subjects
 # Create your models here.
 class Lesson(models.Model):
     lesson_id = models.CharField(max_length=25, primary_key=True)
-    subject_id = models.ForeignKey(Subjects, on_delete=models.CASCADE)
+    subject_id = models.ForeignKey(Subjects,default=None, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     content = models.TextField()
     url = models.CharField(max_length=255)

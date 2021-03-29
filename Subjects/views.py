@@ -10,6 +10,7 @@ def get_page_subject(request, id):
     if subject_list.count() != 0 :
         for subject in subject_list:
             lessons_list = lesson.objects.filter(subject_id = subject.subject_id)
+            print(lessons_list.count())
         return render(request, 'pages/subjects.html', {'message' : message, 'subject_list' : subject_list, 'lessons_list' : lessons_list})       
     else:
         message = "Xin lỗi! Hiện chúng tối đang tiến hành cập nhật video"

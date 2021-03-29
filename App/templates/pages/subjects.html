@@ -24,29 +24,18 @@
         <div class="container-fluid">
             <div class="row">
                 {% for lessons in lessons_list%}
-                {% if lessons.subject_id == subject.subject_id%}
-                <div class="item tns-item tns-slide-active col-md-2 col-lg-2" id="tns1-item3">
+                {% if lessons.subject_id_id == subject.subject_id %}
+                <div class="item tns-item tns-slide-active col-md-4 col-lg-3 col-xl-2" id="tns1-item3">
                     <!-- Card -->
                     <div class="card  mb-4 card-hover">
-                        <a href="\baihoc" class="card-img-top"><img src="/media/{{ lessons.image }}" alt="" class="card-img-top rounded-top"></a>
+                        <a href="\baihoc" class="card-img-top"><img src="/media/{{ lessons.image }}" alt="{{ lessons.name }}" class="card-img-top rounded-top" title="{{ lessons.name }}"></a>
                         <!-- Card Body -->
                         <div class="card-body">
-                            <h5 class="mb-2 text-truncate-line-2 "><a href="\baihoc" class="text-inherit">{{ lessons.name }}</a></h5>
+                            <h5 class="mb-2 text-truncate-line-2 "><a href="\baihoc" class="text-inherit" title="{{ lessons.name }}">{{ lessons.name }}</a></h5>
                             <!-- List -->
                             <ul class="mb-3 list-inline">
                                 <li class="list-inline-item"><i class="far fa-clock mr-1"></i>{{ lessons.time }}</li>
                             </ul>
-                            <div class="lh-1">
-                                <span>
-                                    <i class="mdi mdi-star text-warning mr-n1"></i>
-                                    <i class="mdi mdi-star text-warning mr-n1"></i>
-                                    <i class="mdi mdi-star text-warning mr-n1"></i>
-                                    <i class="mdi mdi-star text-warning mr-n1"></i>
-                                    <i class="mdi mdi-star text-warning"></i>
-                                </span>
-                                <span class="text-warning">4.5</span>
-                                <span class="font-size-xs text-muted">(13,245)</span>
-                            </div>
                         </div>
                         <!-- Card Footer -->
                         <div class="card-footer">
