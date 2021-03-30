@@ -13,7 +13,8 @@ class Lesson(models.Model):
     views = models.IntegerField(default=0)
     dateCreate = models.DateField(auto_now_add=True)
     author = models.CharField(max_length=255, null=True)
+    url_name = models.CharField(max_length=255, null=False, unique=True)
 
     def __str__(self):
-        return f"{self.lesson_id}, {self.subject_id}, {self.name}, {self.content}, {self.url}, {self.image}, {self.time}, {self.views}, {self.dateCreate}, {self.author}"
+        return f"{self.lesson_id}, {self.subject_id}, {self.name}, {self.content}, {self.url}, {self.image}, {self.time}, {self.views}, {self.dateCreate}, {self.author}, {self.url_name}"
 

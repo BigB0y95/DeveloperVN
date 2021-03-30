@@ -7,12 +7,14 @@ from Lesson.models import Lesson as lesson
 def get_page_subject(request, id):
     subject_list = subjects.objects.filter(course_id=id)
     message = ""
+    lessons_list = list()
     if subject_list.count() != 0 :
         for subject in subject_list:
-            lessons_list = lesson.objects.filter(subject_id = subject.subject_id)
-            print(lessons_list.count())
-        return render(request, 'pages/subjects.html', {'message' : message, 'subject_list' : subject_list, 'lessons_list' : lessons_list})       
+            lessons = lesson.objects.filter(subject_id = subject.subject_id)
+            for ls in lessons:
+                lessons_list.append(ls)
+        return render(request, 'pages/subjects.html', {'title' : id, 'message' : message, 'subject_list' : subject_list, 'lessons_list' : lessons_list})       
     else:
-        message = "Xin lỗi! Hiện chúng tối đang tiến hành cập nhật video"
-        return render(request, 'pages/subjects.html', {'message' : message})
+        message = "Xin lỗi! Hiện chúng tối đang tiến hành cập nhật khóa học"
+        return render(request, 'pages/subjects.html', {'title' : id, 'message' : message})
         
