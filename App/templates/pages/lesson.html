@@ -6,7 +6,7 @@
 <article class="col-md-12 col-sm-12 col-lg-8 col-xl-9 article_area mt_t10">   
     <div class="row mb_20 padding_lr15">
         <div class="title_header">
-            <h3 class="mb-0 bold">Python Cơ Bản</h3>
+            <h4 class="mb-0 bold">{{subject.name}}</h4>
         </div>
     </div>
     
@@ -41,9 +41,7 @@
                     <h4>Nội dung chính</h4>
                 </div>
                 <div class="card-body">
-                    <p>1. Giới thiệu về ngôn ngữ Python</p>
-                    <p>2. Cài đặt tool và môi trường</p>
-                    <p>3. Viết chương trình đầu tiên và chạy thành công công chương trình</p>
+                    {{lesson.content|safe|linebreaks}}
                 </div>
             </div>
         </div>
@@ -176,21 +174,13 @@
         </div>
         <div class="card-body sub_content nopadding">
             <div class="row_mr0">
+                {% for course in course_list%}
                 <div class="col-md-4 col-sm-4 padding_10">
                     <div class="textbox__image" style="background-image: url({% static 'image/background/yellow.jpg' %})">
-                        <a href="\khoahoc"><img src="{% static  'image/course/python.png' %}" alt="python"></a>
+                        <a href="/khoahoc/{{course.course_id}}"><img src="/media/{{course.image}}" alt="{{course.name}}" title="{{course.name}}"></a>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4 padding_10">
-                    <div class="textbox__image" style="background-image: url({% static 'image/background/yellow.jpg' %})">
-                        <a href="#"><img src="{% static  'image/course/reactjs.png' %}" alt="reactjs"></a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 padding_10">
-                    <div class="textbox__image" style="background-image: url({% static 'image/background/yellow.jpg' %})">
-                        <a href="#"><img src="{% static  'image/course/golang.png' %}" alt="reactjs"></a>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -206,50 +196,18 @@
         </div>     
         <!-- content --> 
         <div class="card-body les_content padding_5">
-            <div class="les_row">
-                <div class="video_more mr_5">
-                    <video></video>
+            {% for lesson_list in lesson_list%}
+                <div class="les_row">
+                    <div class="video_more mr_5">
+                        <a href="/khoahoc/{{subject.course_id_id}}/{{subject.subject_id}}/{{lesson_list.lesson_id}}/{{lesson_list.url_name}}" class="card-img-top">
+                            <img src="/media/{{ lesson_list.image }}" alt="{{ lesson_list.name }}" class="card-img-top rounded-top" title="{{ lesson_list.name }}">
+                        </a>
+                    </div>
+                    <div class="title_more">
+                        <a href="/khoahoc/{{subject.course_id_id}}/{{subject.subject_id}}/{{lesson_list.lesson_id}}/{{lesson_list.url_name}}" title="{{lesson_list.name}}"><h5 class="font_size_init">{{lesson_list.name}}</h5></a>
+                    </div>
                 </div>
-                <div class="title_more">
-                    <a href="#" title="Bài 2: Kiểu dữ liệu và Kiểu dữ liệu"><h5 class="font_size_init">Bài 2: Kiểu dữ liệu và Kiểu dữ liệu</h5></a>
-                </div>
-            </div>
-
-            <div class="les_row">
-                <div class="video_more mr_5">
-                    <video></video>
-                </div>
-                <div class="title_more">
-                    <a href="#"><h5 class="font_size_init">Bài 3: Cú pháp cơ bản</h5></a>
-                </div>
-            </div>
-
-            <div class="les_row">
-                <div class="video_more mr_5">
-                    <video></video>
-                </div>
-                <div class="title_more">
-                    <a href="#"><h5 class="font_size_init">Bài 4: Xử lý ngoại lệ</h5></a>
-                </div>
-            </div>
-
-            <div class="les_row">
-                <div class="video_more mr_5">
-                    <video></video>
-                </div>
-                <div class="title_more">
-                    <a href="#"><h5 class="font_size_init">Bài 5: Giới Thiệu</h5></a>
-                </div>
-            </div>
-
-            <div class="les_row">
-                <div class="video_more mr_5">
-                    <video></video>
-                </div>
-                <div class="title_more">
-                    <a href="#"><h5 class="font_size_init" alt="Bài 6: Giới Thiệu">Bài 6: Giới Thiệu</h5></a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
     <!-- google advertisement -->
