@@ -1,0 +1,72 @@
+{% extends "base_les.html" %}
+{% load static %}
+{% block title %}Liên Hệ{% endblock %}
+<!-- article -->
+{% block article %}
+    <article class="col-md-12 col-sm-12 col-lg-9 col-xl-9 article_area mt_t10">
+        <section class="md-section">
+            <div class="row_mr0">
+                <div class="contact_left col-md-12 col-sm-12 col-lg-5 col-xl-5 mb_20">
+                    <div class="card box-shadow">
+                        <div class="card-header">
+                            <h4>Kênh liên hệ trực tiếp</h4>
+                        </div>
+                        <div class="card-body">
+                            <p>Mọi thông tin đóng góp ý kiến hoặc hỗ trợ, mọi người có thể liên hệ trực tiếp qua các kênh sau:</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact_right col-md-12 col-sm-12 col-lg-7 col-xl-7">
+                    <div class="card box-shadow">
+                        <div class="card-header">
+                            <h4 class="text-center">Gửi liên hệ đến chúng tôi</h4>
+                        </div>
+                        <div class="card-body">
+                            <p>Nếu có bất kỳ góp ý hay có yêu cầu gì cho <b>developer Việt Nam</b> thì hãy vui lòng gửi cho chúng tôi.</p>
+                            <form class="form-contact" action="" method="post">
+                                <label for="fullname" class="mt_t20 bold">Họ và tên</label>
+                                <input type="text" id="fullname" name="fullname" class="form-control" placeholder="Họ và tên" required="" autofocus="" maxlength="50">
+                                <label for="email" class="mt_t30 bold">Địa chỉ email</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Địa chỉ email" required="">
+                                <label for="phone" class="mt_t30 bold">Số điện thoại</label>
+                                <input type="text" id="phone" name="phone" class="form-control" placeholder="Số điện thoại" required="" maxlength="11">
+                                <label for="content" class="mt_t30 bold">Nội dung liên hệ</label>
+                                <textarea type="text" id="content" name="content" class="form-control" placeholder="Nội dung liên hệ" required="" rows="10"></textarea>
+                                <button class="btn btn-lg btn-rs btn-block mt_t30 bold" type="submit"><i class="fas fa-paper-plane fa-fw mr_5"></i>Gửi liên hệ</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+{% endblock %}
+ <!-- aside -->
+{% block aside %}
+    <aside class="col-md-12 col-sm-12 col-lg-3 col-xl-3 aside_area mt_t10">
+        <div class="card box-shadow">
+            <div class="card-header">
+                <h4>Khóa học</h4>
+            </div>
+            <div class="card-body">       
+                <div class="textbox-group">
+                    <div class="row">
+                        {% for course in course_list%}
+                            <div class="col-md-6 col-lg-6 col-xl-6">
+                            <!-- textbox -->
+                            <div class="textbox">
+                                <div class="textbox__image" style="background-image: url({% static 'image/background/yellow02.jpg' %})">
+                                    <a href="/khoahoc/{{course.course_id}}"><img src="/media/{{course.image}}" alt="{{course.name}}"></a>
+                                </div>
+                                <div class="textbox__body">
+                                    <h5 class="textbox__title"><a href="/khoahoc/{{course_list.course_id}}">{{course.name}}</a></h5>
+                                </div>
+                            </div><!-- End / textbox -->									
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+{% endblock %}

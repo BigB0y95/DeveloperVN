@@ -14,6 +14,7 @@ section a:hover, aside a:hover{
 } */
 
 .footer{
+    background-color: #2f4355;
     min-height: 60px;
     max-height: 117px;
     position: sticky;
@@ -234,3 +235,11 @@ video{
     background-color: transparent;
     border-color: transparent;
 }
+/*.contact_left{
+    background-image: url('/media/image/background/bg-contact.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index:1;
+}*/

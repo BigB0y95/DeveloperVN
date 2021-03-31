@@ -21,18 +21,38 @@ $(document).ready(function() {
 $(document).ready(function() {
   var url = window.location.href;
   if(url.indexOf('trangchu') > -1){
-      $("#about").removeClass('active');
+      $('#about').removeClass('active');
       $('#course').removeClass('active');
-      $("#home").addClass('active');
+      $('#contact').removeClass('active');
+      $('#sponsorship').removeClass('active');
+      $('#home').addClass('active');
   }
   else if(url.indexOf('gioithieu') > -1){
-      $("#home").removeClass('active');
+      $('#home').removeClass('active');
       $('#course').removeClass('active');
-      $("#about").addClass('active');
+      $('#contact').removeClass('active');
+      $('#sponsorship').removeClass('active');
+      $('#about').addClass('active');
   }
   else if(url.indexOf('khoahoc') > -1){
-      $("#home").removeClass('active');
-      $("#about").removeClass('active');
+      $('#home').removeClass('active');
+      $('#about').removeClass('active');
+      $('#contact').removeClass('active');
+      $('#sponsorship').removeClass('active');
       $('#course').addClass('active');
-}
+  }
+  else if(url.indexOf('lienhe') > -1){
+    $('#home').removeClass('active');
+    $('#about').removeClass('active');
+    $('#course').removeClass('active');
+    $('#sponsorship').removeClass('active');
+    $('#contact').addClass('active');
+  }
+  else if(url.indexOf('taitro') > -1){
+    $('#home').removeClass('active');
+    $('#about').removeClass('active');
+    $('#course').removeClass('active');
+    $('#contact').removeClass('active');
+    $('#sponsorship').addClass('active');
+  }
 });

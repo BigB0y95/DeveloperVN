@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'Subjects',
     'Lesson',
     'Members',
+    'Contact',
+    'Sponsor',
     
 ]
 

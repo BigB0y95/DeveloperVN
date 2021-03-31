@@ -44,6 +44,9 @@ body{
 .padding_lr15{
     padding: 0px 15px;;
 }
+.padding_lr40{
+    padding: 0px 40px;;
+}
 .nopadding{
     padding: 0 !important;
 }
@@ -87,4 +90,7 @@ body{
 }
 .bg-dark-des{
     background-color: #2f4355;
+}
+.width_50{
+    width: 50px;
 }
