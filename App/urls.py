@@ -18,7 +18,7 @@ urlpatterns = [
     path('dangnhaptaikhoan', member.login_user),
     path('dangxuat', member.logout_user),
     path('khoahoc/<str:id>/', subjects.get_page_subject),
-    path('khoahoc/<str:course_id>/<str:subject_id>/<str:lesson_id>/<str:url_name>/', lesson.get_lesson_by_id),
+    path('khoahoc/<str:course_id>/<str:subject_id>/<int:lesson_id>/<str:url_name>/', lesson.get_lesson_by_id),
     path('lienhe', contact.get_page_contact),
     path('taitro', sponsor.get_page_sponsor)
 ]

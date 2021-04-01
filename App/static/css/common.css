@@ -20,8 +20,17 @@ body{
 .mt_t10{
     margin-top: 10px;
 }
+.mb_30{
+    margin-bottom: 30px;
+}
 .mb_20{
     margin-bottom: 20px;
+}
+.mb_15{
+    margin-bottom: 15px;
+}
+.mb_10{
+    margin-bottom: 10px;
 }
 .mr_5{
     margin-right: 5px;
@@ -88,9 +97,15 @@ body{
 .font_size_30{
     font-size: 30px;
 }
+.fs_xx-large{
+    font-size: xx-large;
+}
 .bg-dark-des{
     background-color: #2f4355;
 }
 .width_50{
     width: 50px;
+}
+.lh_5{
+    line-height: 5px;
 }
