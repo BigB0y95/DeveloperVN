@@ -20,6 +20,12 @@ body{
 .mt_t10{
     margin-top: 10px;
 }
+.mb_50{
+    margin-bottom: 50px;
+}
+.mb_40{
+    margin-bottom: 40px;
+}
 .mb_30{
     margin-bottom: 30px;
 }
@@ -58,6 +64,9 @@ body{
 }
 .nopadding{
     padding: 0 !important;
+}
+.padding_lef_40{
+    padding-left: 40px;
 }
 .nomargin_bottom{
     margin-bottom: 0px !important;

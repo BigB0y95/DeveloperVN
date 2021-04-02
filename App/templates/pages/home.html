@@ -43,10 +43,10 @@
     <!-- section -->
     <section class="md-section" style="padding:0;">
         <div class="container-fluid">
-				<div class="textbox-group">
-					<div class="row">
-						{% for course in course_list%}
-							<div class="col-md-4 col-lg-4 col-xl-3 mt_t20">
+			<div class="textbox-group">
+				<div class="row">
+					{% for course in course_list%}
+						<div class="col-md-4 col-lg-4 col-xl-3 mt_t20">
 							<!-- textbox -->
 							<div class="textbox">
 								<div class="textbox__image" style="background-image: url({% static 'image/background/yellow02.jpg' %})">
@@ -58,17 +58,17 @@
 								</div>
 							</div><!-- End / textbox -->									
 						</div>
-						{% endfor %}
-					</div>
+					{% endfor %}
 				</div>
 			</div>
+		</div>
     </section>
 </article>
 <article>
     <div class="container-fluid">
         <div class="row mb_10 mt_t30">
             <div class="title_header">
-                <h2 class="mb-0 bold">Việc Làm IT Tại Nhà</h2>
+                <h2 class="mb-0 bold">Khác</h2>
             </div>
         </div>
     </div>
@@ -86,6 +86,18 @@
 								<div class="textbox__body">
 									<h2 class="textbox__title"><a href="#">Việc Làm IT Tại Nhà</a></h2>
 									<div class="textbox__description"><p class="bold">Đăng tin miễn phí và tìm kiếm việc làm thêm tại nhà</p></div>
+								</div>
+							</div><!-- End / textbox -->									
+						</div>
+                        <div class="col-md-3 col-lg-3 mt_t20">									
+							<!-- textbox -->
+							<div class="textbox">
+								<div class="textbox__image" style="background-image: url({% static 'image/background/yellow02.jpg' %})">
+									<a href="#"><img src="{% static  'image/course/python.png' %}" alt="python"></a>
+								</div>
+								<div class="textbox__body">
+									<h2 class="textbox__title"><a href="#">Hỏi Và Đáp</a></h2>
+									<div class="textbox__description"><p class="bold">Đặt câu hỏi và trả lời câu hỏi</p></div>
 								</div>
 							</div><!-- End / textbox -->									
 						</div>

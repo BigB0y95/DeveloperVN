@@ -4,13 +4,16 @@ from .forms import register_form
 from .models import Member as member_model
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from Api.backend import EmailOrUsernameModelBackend
 
 # Create your views here.
 def get_page_register(request):
     return render(request, 'pages/register.html')
 
 def get_page_login(request):
-    return render(request, 'pages/sign_in.html')
+    path = request.GET.get('path')
+    print(path)
+    return render(request, 'pages/sign_in.html', {'path' : path})
 
 def register(request):
     if request.method == 'POST':
@@ -31,17 +34,19 @@ def login_user(request):
     account = request.POST['account']
     password = request.POST['password']
     #member = member_model.objects.filter(email = account, password = password, status = True)
-    try:
-        user = authenticate(request, username = User.objects.get(email = account), password = password)
-    except:
-        user = authenticate(request, username = account, password = password)
+    #try:
+    #    user = authenticate(request, username = User.objects.get(email = account), password = password)
+    #except:
+    #    user = authenticate(request, username = account, password = password)
+    user = EmailOrUsernameModelBackend.authenticate(request, account, password)
     if user is not None:
-        login(request, user)
-        return redirect('/trangchu' ,{'user' : user})
+        login(request, user, backend='Api.backend.EmailOrUsernameModelBackend')
+        path = request.GET.get('path')
+        return redirect(path ,{'user' : user})
     else:
-        return redirect('/dangnhap', {'message': 'Tài khoản hoặc mật khẩu không đúng'})
+        return render(request, 'pages/sign_in.html', {'message': 'Tài khoản hoặc mật khẩu không đúng'})
 
 def logout_user(request):
     logout(request)
-    url_present = request.path
-    return redirect(url_present)
+    path = request.GET.get('path')
+    return redirect(path)

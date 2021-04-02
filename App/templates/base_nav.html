@@ -41,13 +41,13 @@
                             <a class="dropdown-item" href="#"><i class="fa fa-user mr_10"></i>Hồ sơ</a>
                             <a class="dropdown-item" href="#"><i class="fas fa-key mr_10"></i>Đổi mật khẩu</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="\dangxuat"><i class="fas fa-sign-out-alt mr_10"></i>Đăng xuất</a>
+                            <a class="dropdown-item" href="\dangxuat?path={{request.path}}"><i class="fas fa-sign-out-alt mr_10"></i>Đăng xuất</a>
                         </div>
                     </div>
 
                 {% elif user.username == ''%}
-                    <button class="btn btn-sm btn-rs text-while mr_5" formaction ="\dangky">Đăng Ký</button>
-                    <button class="btn btn-sm btn-rs text-while" formaction ="\dangnhap">Đăng Nhập</button>
+                    <a type="button" class="btn btn-sm btn-rs text-while mr_5" href = "\dangky">Đăng Ký</a>
+                    <a type="button" class="btn btn-sm btn-rs text-while" href ="\dangnhap?path={{request.path}}">Đăng Nhập</a>
                 {% endif %}
             </form>
         </div>
