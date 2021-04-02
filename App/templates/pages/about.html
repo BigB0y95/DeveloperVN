@@ -3,7 +3,7 @@
 {% block title %}GioiThieu{% endblock %}
 <!-- body -->
 {% block body %}
-<body style="background-image: url({% static 'image/about/about03.jpg' %})">
+<body style="background-image: url({% static 'image/background/sign_in.png' %})">
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto">
         <!-- navbar -->
@@ -55,8 +55,8 @@
                             </div>
 
                         {% elif user.username == ''%}
-                            <button class="btn btn-sm btn-rs text-while" formaction ="\dangky">Đăng Ký</button>
-                            <button class="btn btn-sm btn-rs text-while" formaction ="\dangnhap">Đăng Nhập</button>
+                            <a type="button" class="btn btn-sm btn-rs text-while mr_5" href = "\dangky">Đăng Ký</a>
+                            <a type="button" class="btn btn-sm btn-rs text-while" href ="\dangnhap?path={{request.path}}">Đăng Nhập</a>
                         {% endif %}
                     </form>
                     </div>
@@ -72,8 +72,8 @@
 
         <footer class="mastfoot mt-auto text-center">
             <div class="row footer_btn">
-                <button type="button" class="btn btn-primary btn-lg mr_20 mt_t10" formaction ="\lienhe">Liên Hệ Chúng Tôi</button>
-                <button type="button" class="btn btn-danger btn-lg mr_20 mt_t10" formaction ="\taitro">Tài Trợ</button>
+                <a type="button" class="btn btn-primary btn-lg mr_20 mt_t10" href ="\lienhe">Liên Hệ Chúng Tôi</a>
+                <a type="button" class="btn btn-danger btn-lg mr_20 mt_t10" href ="\taitro">Tài Trợ</a>
                 <div class="btn-group mt_t10">
                     <button type="button" class="btn-lg btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Khóa Học</button> 
                     <div class="dropdown-menu">
