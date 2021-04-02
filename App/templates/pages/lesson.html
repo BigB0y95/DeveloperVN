@@ -179,9 +179,9 @@
             <h4><i class="fas fa-list mr_10"></i>Danh sách bài học</h4>
         </div>     
         <!-- content --> 
-        <div class="card-body les_content padding_5">
+        <div class="card-body les_content nopadding">
             {% for lesson_list in lesson_list%}
-                <div class="les_row padding_5">
+                <div id="{{lesson_list.lesson_id}}" class="les_row padding_5">
                     <div class="video_more mr_5">
                         <a href="/khoahoc/{{subject.course_id_id}}/{{subject.subject_id}}/{{lesson_list.lesson_id}}/{{lesson_list.url_name}}" class="card-img-top">
                             <img src="/media/{{ lesson_list.image }}" alt="{{ lesson_list.name }}" class="card-img-top rounded-top" title="{{ lesson_list.name }}">
@@ -199,4 +199,7 @@
         <img src="{% static 'image/google_adv/01.jpg' %}" alt="">
     </div>
 </aside>
+<script>
+    $("#{{lesson.lesson_id}}").addClass('active_row');
+</script>
 {% endblock %}
