@@ -1,0 +1,4 @@
+icon phone:<i class="fas fa-phone-square-alt fs_xx-large"></i>
+icon gmail:<i class="fas fa-envelope-square fs_xx-large"></i>
+icon facebokk:<i class="fab fa-facebook-square fs_xx-large"></i>
+icon youtube: <i class="fab fa-youtube-square fs_xx-large"></i>

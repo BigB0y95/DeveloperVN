@@ -53,6 +53,9 @@ body{
 .padding_5{
     padding: 5px 5px !important;
 }
+.padding_15{
+    padding: 15px 15px !important;
+}
 .padding_10{
     padding: 10px 10px !important;
 }
@@ -86,6 +89,9 @@ body{
 .red{
     color: red !important;
 }
+.dark_grayish_cyan{
+    color: #879390;
+}
 .font_size_init{
     font-size:initial;
 }
@@ -117,4 +123,10 @@ body{
 }
 .lh_5{
     line-height: 5px;
+}
+.lh_20{
+    line-height: 20px;
+}
+.active_row{
+    background-color: #ffffb3;
 }

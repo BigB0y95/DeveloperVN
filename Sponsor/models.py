@@ -18,7 +18,7 @@ class Sponsor(models.Model):
     account_id = models.ForeignKey(Info_Account, on_delete=models.CASCADE)
     sender = models.CharField(max_length=100)
     money = models.CharField(max_length=12)
-    message = models.CharField(max_length=500)
+    message = models.CharField(max_length=500, null=True, blank=True)
     sentDate = models.DateField()
     status = models.BooleanField(default=True)
 

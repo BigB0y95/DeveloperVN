@@ -13,13 +13,37 @@
                         </div>
                         <div class="card-body">
                             <p><b>Developer Việt Nam</b> biết ơn rất nhiều những cá nhân, tổ chức đã ủng hộ và đồng hành cùng chúng tôi. Chúng tôi luôn lấy đó làm động lực để cố gắng hết sức xây dựng những khóa học hay và bổ ích.</p>
-                            <p class="bold">Chúng tôi xin chân thành cảm ơn các cá nhân, tổ chức sau:</p>
+                            <p class="bold">Chúng tôi xin chân thành cảm ơn các cá nhân và tổ chức sau:</p>
                             {% for sponsor in sponsor_list%}
                             <div class="mt_t30 mb_30 lh_5">
-                                <p><b>{{sponsor.sender}}</b> đã ủng hộ <b>{{sponsor.money}}</b> qua <b>{{sponsor.Info_Account.name}}</b></p>
-                                <p>{{sponsor.message}}<p>
+                                <p><b class="blue">{{sponsor.sender}}</b> đã ủng hộ <b>{{sponsor.money}}</b> qua <b>{{sponsor.Info_Account.name}}</b></p>
+                                {% if sponsor.message != null %}
+                                    <p>{{sponsor.message}}<p>
+                                {% endif %}
+                                <p class="dark_grayish_cyan">{{sponsor.sentDate}}<p>
                             </div>
                             {% endfor %}
+                            {% if sponsor_list.has_other_pages %}
+                                <ul class="pagination">
+                                    {% if sponsor_list.has_previous %}
+                                        <li class="page-item"><a class="page-link" href="?page={{ users.previous_page_number }}">&laquo;</a></li>
+                                    {% else %}
+                                        <li class="disabled page-item"><span class="page-link">&laquo;</span></li>
+                                    {% endif %}
+                                    {% for i in sponsor_list.paginator.page_range %}
+                                        {% if sponsor_list.number == i %}
+                                            <li class="active page-item"><span class="page-link">{{ i }} <span class="sr-only">(current)</span></span></li>
+                                        {% else %}
+                                            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% if sponsor_list.has_next %}
+                                        <li class="page-item"><a class="page-link" href="?page={{ sponsor_list.next_page_number }}">&raquo;</a></li>
+                                    {% else %}
+                                        <li class="disabled page-item"><span class="page-link">&raquo;</span></li>
+                                    {% endif %}
+                                </ul>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -30,7 +54,7 @@
                         </div>
                         <div class="card-body">
                             <p>Ủng hộ giúp <b>developer Việt Nam</b> có kinh phí xây dựng nhiều khóa học hơn.</p>
-                            <p>Hãy gửi cho chúng tôi biết <b>Tên</b> và <b>Thông điệp</b> của bạn khi tài trợ nhé.
+                            <p>Hãy gửi cho chúng tôi biết <b>Tên</b> và <b>Thông điệp</b> của bạn khi tài trợ cho chúng tôi nhé.
                             <div class="row_mr0">
                                 {% for info_account in info_account_list%}
                                 <div class="lesson_next col-md-6 col-sm-6 col-xl-3 col-lg-6 padding_5">
