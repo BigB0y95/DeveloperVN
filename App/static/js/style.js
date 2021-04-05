@@ -32,6 +32,7 @@ $(document).ready(function() {
       $('#course').removeClass('active');
       $('#contact').removeClass('active');
       $('#sponsorship').removeClass('active');
+      $('#share').removeClass('active');
       $('#about').addClass('active');
   }
   else if(url.indexOf('khoahoc') > -1){
@@ -39,6 +40,7 @@ $(document).ready(function() {
       $('#about').removeClass('active');
       $('#contact').removeClass('active');
       $('#sponsorship').removeClass('active');
+      $('#share').removeClass('active');
       $('#course').addClass('active');
   }
   else if(url.indexOf('lienhe') > -1){
@@ -46,6 +48,7 @@ $(document).ready(function() {
     $('#about').removeClass('active');
     $('#course').removeClass('active');
     $('#sponsorship').removeClass('active');
+    $('#share').removeClass('active');
     $('#contact').addClass('active');
   }
   else if(url.indexOf('taitro') > -1){
@@ -53,6 +56,15 @@ $(document).ready(function() {
     $('#about').removeClass('active');
     $('#course').removeClass('active');
     $('#contact').removeClass('active');
+    $('#share').removeClass('active');
     $('#sponsorship').addClass('active');
+  }
+  else if(url.indexOf('chiase') > -1){
+    $('#home').removeClass('active');
+    $('#about').removeClass('active');
+    $('#course').removeClass('active');
+    $('#contact').removeClass('active');
+    $('#sponsorship').removeClass('active');
+    $('#share').addClass('active');
   }
 });

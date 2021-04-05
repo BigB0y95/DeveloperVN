@@ -6,9 +6,9 @@ from .models import Info_Account as info_acc_model, Sponsor as sponsor_model
 # Create your views here.
 def get_page_sponsor(request):
     # get course list
-    course_list = course_model.objects.all()
+    course_list = course_model.objects.filter(status=True)
     info_account_list = info_acc_model.objects.filter(status = True)
-    sponsor_list = sponsor_model.objects.all().select_related('account_id').order_by('sponsor_id')
+    sponsor_list = sponsor_model.objects.all().select_related('account').order_by('sponsor_id')
 
     page = request.GET.get('page', 1)
     paginator = Paginator(sponsor_list, 8)

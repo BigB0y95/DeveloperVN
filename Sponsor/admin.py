@@ -8,4 +8,4 @@ class Infor_Account_Admin(admin.ModelAdmin):
 
 @admin.register(Sponsor)
 class SponsorAdmin(admin.ModelAdmin):
-    list_display = ("sponsor_id", "sender", "money", "message", "sentDate", "status")
+    list_display = ("sponsor_id", "sender","account", "money", "message", "sentDate", "status")

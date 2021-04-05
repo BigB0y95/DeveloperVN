@@ -1,0 +1,51 @@
+{% extends "base_les.html" %}
+{% load static %}
+{% block title %}Chia Sẻ{% endblock %}
+<!-- article -->
+{% block article %}
+    <article class="col-md-12 col-sm-12 col-lg-9 col-xl-9 article_area mt_t10">
+        <div class="title_post text-center mb_30">
+            <h3>Featured post</h3>
+        </div>
+        <section class="md-section">
+            <div class="mb_10">
+                <p>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+            </div>
+            <div class="video_post">
+                <video></video>
+            </div>
+            <div class="content_post">
+                <p>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+            </div>
+        </section>
+    </article>
+{% endblock %}
+<!-- aside -->
+{% block aside %}
+    <aside class="col-md-12 col-sm-12 col-lg-3 col-xl-3 aside_area mt_t10">
+        <div class="card box-shadow">
+            <div class="card-header">
+                <h4>Khóa học</h4>
+            </div>
+            <div class="card-body">       
+                <div class="textbox-group">
+                    <div class="row">
+                        {% for course in course_list%}
+                            <div class="col-md-6 col-lg-6 col-xl-6">
+                            <!-- textbox -->
+                            <div class="textbox">
+                                <div class="textbox__image" style="background-image: url({% static 'image/background/yellow02.jpg' %})">
+                                    <a href="/khoahoc/{{course.course_id}}"><img src="/media/{{course.image}}" alt="{{course.name}}"></a>
+                                </div>
+                                <div class="textbox__body">
+                                    <h5 class="textbox__title"><a href="/khoahoc/{{course_list.course_id}}">{{course.name}}</a></h5>
+                                </div>
+                            </div><!-- End / textbox -->									
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+{% endblock %}

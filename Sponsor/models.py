@@ -15,7 +15,7 @@ class Info_Account(models.Model):
 
 class Sponsor(models.Model):
     sponsor_id = models.AutoField(primary_key=True)
-    account_id = models.ForeignKey(Info_Account, on_delete=models.CASCADE)
+    account = models.ForeignKey(Info_Account, on_delete=models.CASCADE)
     sender = models.CharField(max_length=100)
     money = models.CharField(max_length=12)
     message = models.CharField(max_length=500, null=True, blank=True)
@@ -23,4 +23,4 @@ class Sponsor(models.Model):
     status = models.BooleanField(default=True)
 
     def __str__(self):
-        return f"{self.sponsor_id}, {self.sender}, {self.money}, {self.message}, {self.sentDate}, {self.status}"
+        return f"{self.sponsor_id}, {self.account}, {self.sender}, {self.money}, {self.message}, {self.sentDate}, {self.status}"

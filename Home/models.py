@@ -8,6 +8,7 @@ class Course(models.Model):
     content = models.TextField(null=True)
     image = models.ImageField(upload_to = 'image/course')
     dateCreate = models.DateField(auto_now_add=True)
+    status = models.BooleanField(default=True)
 
     def __str__(self):
-        return f"{self.course_id}, {self.name}, {self.about}, {self.content}, {self.image}, {self.dateCreate}"
+        return f"{self.course_id}, {self.name}, {self.about}, {self.content}, {self.image}, {self.dateCreate}, {self.status}"

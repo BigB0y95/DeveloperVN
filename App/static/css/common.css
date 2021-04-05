@@ -2,6 +2,9 @@
 body{
     background-color:#f7f7f7;
 }
+.ml_40{
+    margin-left: 40px;
+}
 .ml_20{
     margin-left: 20px;
 }
@@ -37,6 +40,12 @@ body{
 }
 .mb_10{
     margin-bottom: 10px;
+}
+.mb_5{
+    margin-bottom: 5px;
+}
+.no_mb{
+    margin-bottom: 0px;
 }
 .mr_5{
     margin-right: 5px;

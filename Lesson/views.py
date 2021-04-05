@@ -8,7 +8,7 @@ from Sponsor.models import Info_Account as info_acc_module
 # Create your views here.
 def get_lesson_by_id(request, course_id, subject_id, lesson_id, url_name):
     # get course list
-    course_list = course_model.objects.all()
+    course_list = course_model.objects.filter(status=True)
     # get subject by id
     subject = subject_model.objects.get(subject_id= subject_id)
     # get lesson by id

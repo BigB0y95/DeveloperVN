@@ -6,7 +6,7 @@ from Lesson.models import Lesson as lesson_model
 
 # Create your views here.
 def get_page_subject(request, id):
-    course_list = course_model.objects.all()
+    course_list = course_model.objects.filter(status=True)
     subject_list = subjects.objects.filter(course_id=id)
     message = ""
     lessons_list = list()

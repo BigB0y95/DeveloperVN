@@ -5,7 +5,7 @@ from .models import Contact_User as contact_user, Contact_Live as contact_live
 
 # Create your views here.
 def get_page_contact(request):
-    course_list = course_model.objects.all()
+    course_list = course_model.objects.filter(status=True)
     contact_live_list = contact_live.objects.filter(status=True)
     message = request.GET.get("thongbao")
     return render(request, 'pages/contact.html', {'course_list' : course_list,'contact_live_list' : contact_live_list, 'message':message})

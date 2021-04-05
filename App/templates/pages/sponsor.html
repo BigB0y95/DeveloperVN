@@ -16,7 +16,7 @@
                             <p class="bold">Chúng tôi xin chân thành cảm ơn các cá nhân và tổ chức sau:</p>
                             {% for sponsor in sponsor_list%}
                             <div class="mt_t30 mb_30 lh_5">
-                                <p><b class="blue">{{sponsor.sender}}</b> đã ủng hộ <b>{{sponsor.money}}</b> qua <b>{{sponsor.Info_Account.name}}</b></p>
+                                <p><b class="blue">{{sponsor.sender}}</b> đã ủng hộ <b>{{sponsor.money}}</b> qua <b>{{sponsor.account.name}}</b></p>
                                 {% if sponsor.message != null %}
                                     <p>{{sponsor.message}}<p>
                                 {% endif %}
@@ -26,7 +26,7 @@
                             {% if sponsor_list.has_other_pages %}
                                 <ul class="pagination">
                                     {% if sponsor_list.has_previous %}
-                                        <li class="page-item"><a class="page-link" href="?page={{ users.previous_page_number }}">&laquo;</a></li>
+                                        <li class="page-item"><a class="page-link" href="?page={{ sponsor.previous_page_number }}">&laquo;</a></li>
                                     {% else %}
                                         <li class="disabled page-item"><span class="page-link">&laquo;</span></li>
                                     {% endif %}

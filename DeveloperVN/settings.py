@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'Contact',
     'Sponsor',
     'Api',
+    'Share',
+    'Posts',
     
 ]
 
