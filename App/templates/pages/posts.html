@@ -5,17 +5,19 @@
 {% block article %}
     <article class="col-md-12 col-sm-12 col-lg-9 col-xl-9 article_area mt_t10">
         <div class="title_post text-center mb_30">
-            <h3>Featured post</h3>
+            <h3>{{post.name}}</h3>
         </div>
         <section class="md-section">
             <div class="mb_10">
-                <p>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                <p>{{post.describe}}</p>
             </div>
+            {% if post.url != null%}
             <div class="video_post">
                 <video></video>
             </div>
+            {% endif %}
             <div class="content_post">
-                <p>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                <p>{{post.content|safe|linebreaks}}</p>
             </div>
         </section>
     </article>
@@ -23,7 +25,7 @@
 <!-- aside -->
 {% block aside %}
     <aside class="col-md-12 col-sm-12 col-lg-3 col-xl-3 aside_area mt_t10">
-        <div class="card box-shadow">
+        <div class="card box-shadow mb_20">
             <div class="card-header">
                 <h4>Khóa học</h4>
             </div>
@@ -31,19 +33,39 @@
                 <div class="textbox-group">
                     <div class="row">
                         {% for course in course_list%}
-                            <div class="col-md-6 col-lg-6 col-xl-6">
-                            <!-- textbox -->
-                            <div class="textbox">
-                                <div class="textbox__image" style="background-image: url({% static 'image/background/yellow02.jpg' %})">
-                                    <a href="/khoahoc/{{course.course_id}}"><img src="/media/{{course.image}}" alt="{{course.name}}"></a>
-                                </div>
-                                <div class="textbox__body">
-                                    <h5 class="textbox__title"><a href="/khoahoc/{{course_list.course_id}}">{{course.name}}</a></h5>
-                                </div>
-                            </div><!-- End / textbox -->									
-                        </div>
+                            <div class="col-sm-4 col-md-6 col-lg-6 col-xl-6">
+                                <!-- textbox -->
+                                <div class="textbox">
+                                    <div class="textbox__image" style="background-image: url({% static 'image/background/yellow02.jpg' %})">
+                                        <a href="/khoahoc/{{course.course_id}}"><img src="/media/{{course.image}}" alt="{{course.name}}"></a>
+                                    </div>
+                                    <div class="textbox__body">
+                                        <h5 class="textbox__title"><a href="/khoahoc/{{course_list.course_id}}">{{course.name}}</a></h5>
+                                    </div>
+                                </div><!-- End / textbox -->									
+                            </div>
                         {% endfor %}
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="card box-shadow">
+            <div class="card-header">
+                <h4>Mới nhất</h4>
+            </div>
+            <div class="card-body">       
+                <div class="textbox-group">
+                    {% for post_new in post_list_new%}
+                        <div class="card flex-md-row mb_10 box-shadow h-md-250">
+                            <div class="card-body d-flex flex-column align-items-start">                    
+                                <h5 class="mb-0">
+                                    <a class="text-dark" href="/chiase/{{post_new.post_id}}/{{post_new.url_name}}">{{post_new.name}}</a>
+                                </h5>
+                                <p class="dark_grayish_cyan no_mb">{{post_new.createDate}}</p>
+                                <a href="/chiase/{{post_new.post_id}}/{{post_new.url_name}}">Xem thêm <i class="fas fa-angle-double-right ml_5"></i></a>
+                            </div>                
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@
 <body class="text-center" style="background-image: url({% static 'image/background/sign_in.png' %})">
     <form class="form-register" action="\dangkythanhvien" method="post">
         {% csrf_token %}
-        <a href="\trangchu"><img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"></a>
+        <a href="\trangchu"><img class="mb-4" src="/media/{{logo.image}}" alt="DeveloperVietNam" title="DeveloperVietNam" width="72" height="72"></a>
         <h1 class="h3 mb-3 font-weight-normal">Đăng Ký Tài Khoản</h1>
         <h1 class="h3 mb-3 font-weight-normal">Vui Lòng Điền Thông Tin</h1>
         <p class="mt_t10 text-muted text-left nomargin_bottom">Nhập địa chỉ Email</p>

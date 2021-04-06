@@ -244,3 +244,6 @@ video{
     background-color: #afc2d3 !important;
     border-bottom: 1px solid #afc2d3 !important;
 }
+.navbar-brand{
+    padding: 0;
+}

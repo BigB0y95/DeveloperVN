@@ -25,5 +25,5 @@ urlpatterns = [
     path('guilienhe', contact.send_contact),
     path('taitro', sponsor.get_page_sponsor),
     path('chiase', share.get_page_share),
-    path('chiase/baiviet', posts.get_post_by_id)
+    path('chiase/<int:post_id>/<str:url_name>', posts.get_post_by_id)
 ]

@@ -5,15 +5,18 @@ from .models import Member as member_model
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from Api.backend import EmailOrUsernameModelBackend
+from Home.models import Logo as logo_model
 
 # Create your views here.
 def get_page_register(request):
-    return render(request, 'pages/register.html')
+    logo = logo_model.objects.filter(status=True)[0]
+    return render(request, 'pages/register.html',{'logo' : logo})
 
 def get_page_login(request):
+    logo = logo_model.objects.filter(status=True)[0]
     path = request.GET.get('path')
     print(path)
-    return render(request, 'pages/sign_in.html', {'path' : path})
+    return render(request, 'pages/sign_in.html', {'path' : path, 'logo' : logo})
 
 def register(request):
     if request.method == 'POST':

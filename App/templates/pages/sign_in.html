@@ -6,7 +6,7 @@
 <body class="text-center" style="background-image: url({% static 'image/background/sign_in.png' %})">
     <form class="form-signin" action="\dangnhaptaikhoan?path={{path}}" method="post">
         {% csrf_token %}
-        <a href="\trangchu"><img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"></a>
+        <a href="\trangchu"><img class="mb-4" src="/media/{{logo.image}}" alt="DeveloperVietNam" title="DeveloperVietNam" width="72" height="72"></a>
         <h1 class="h3 mb-3 font-weight-normal">Vui Lòng Nhập Tài Khoản</h1>
         <label for="account" class="sr-only">Tên người dùng/ Địa chỉ Email</label>
         <input type="text" id="account" name="account" class="form-control" placeholder="Tên người dùng/ Địa chỉ Email" required="" autofocus="">

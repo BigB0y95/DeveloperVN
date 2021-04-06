@@ -15,10 +15,10 @@
                             <p><b>Developer Việt Nam</b> biết ơn rất nhiều những cá nhân, tổ chức đã ủng hộ và đồng hành cùng chúng tôi. Chúng tôi luôn lấy đó làm động lực để cố gắng hết sức xây dựng những khóa học hay và bổ ích.</p>
                             <p class="bold">Chúng tôi xin chân thành cảm ơn các cá nhân và tổ chức sau:</p>
                             {% for sponsor in sponsor_list%}
-                            <div class="mt_t30 mb_30 lh_5">
-                                <p><b class="blue">{{sponsor.sender}}</b> đã ủng hộ <b>{{sponsor.money}}</b> qua <b>{{sponsor.account.name}}</b></p>
+                            <div class="mt_t15 mb_10">
+                                <p class="no_mb"><b class="blue">{{sponsor.sender}}</b> đã ủng hộ <b>{{sponsor.money}}</b> qua <b>{{sponsor.account.name}}</b></p>
                                 {% if sponsor.message != null %}
-                                    <p>{{sponsor.message}}<p>
+                                    <p class="no_mb">{{sponsor.message}}</p>
                                 {% endif %}
                                 <p class="dark_grayish_cyan">{{sponsor.sentDate}}<p>
                             </div>
@@ -26,7 +26,7 @@
                             {% if sponsor_list.has_other_pages %}
                                 <ul class="pagination">
                                     {% if sponsor_list.has_previous %}
-                                        <li class="page-item"><a class="page-link" href="?page={{ sponsor.previous_page_number }}">&laquo;</a></li>
+                                        <li class="page-item"><a class="page-link" href="?page={{ sponsor_list.previous_page_number }}">&laquo;</a></li>
                                     {% else %}
                                         <li class="disabled page-item"><span class="page-link">&laquo;</span></li>
                                     {% endif %}

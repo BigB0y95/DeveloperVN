@@ -14,8 +14,7 @@ def get_page_share(request):
     # if have not post
     if post_list.count() == 0:
         message = "Xin lỗi! Chúng tôi đang tiến hành cập nhật bài viết"
-        print(message)
-        return render(request, 'pages/Share.html',{'course_list' : course_list, 'post_list': post_list, 'message': message})
+        return render(request, 'pages/Share.html',{'course_list' : course_list, 'message': message})
     # if post exist
     else:
         # thực hiện phân trang
@@ -28,5 +27,4 @@ def get_page_share(request):
             posts = paginator.page(1)
         except EmptyPage:
             posts = paginator.page(paginator.num_pages)
-        print(message)
-        return render(request, 'pages/Share.html',{'course_list' : course_list, 'post_list': post_list, 'message': message, 'posts':posts})
+        return render(request, 'pages/Share.html',{'course_list' : course_list, 'post_list': posts, 'message': message})

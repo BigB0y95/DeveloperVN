@@ -8,70 +8,24 @@
             {% if message != ''%}
                 <h4 class="red">{{ message }}</h4>
             {% else %}
+                {% for post in post_list%}
                 <div class="card flex-md-row mb_10 box-shadow h-md-250">
-                    <a href="chiase/baiviet"><img class="card-img-left flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb"
-                        alt="" style="width: 250px; height: 150px;" src="/media/image/share/course-python.jpg" data-holder-rendered="true"></a>
+                    <a href="/chiase/{{post.post_id}}/{{post.url_name}}"><img class="card-img-left flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb"
+                        alt="{{post.name}}" style="width: 250px; height: 150px;" src="/media/{{post.image}}" data-holder-rendered="true"></a>
                     <div class="card-body d-flex flex-column align-items-start">                    
                         <h3 class="mb-0">
-                            <a class="text-dark" href="chiase/baiviet">Featured post</a>
+                            <a class="text-dark" href="/chiase/{{post.post_id}}/{{post.url_name}}">{{post.name}}</a>
                         </h3>
-                        <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                        <p class="dark_grayish_cyan no_mb">Nov 12</p>
-                        <a href="chiase/baiviet">Xem thêm <i class="fas fa-angle-double-right ml_5"></i></a>
+                        <p class="card-text mb-auto">{{post.describe}}</p>
+                        <p class="dark_grayish_cyan no_mb">{{post.createDate}}</p>
+                        <a href="/chiase/{{post.post_id}}/{{post.url_name}}">Xem thêm <i class="fas fa-angle-double-right ml_5"></i></a>
                     </div>                
                 </div>
-                <div class="card flex-md-row mb_10 box-shadow h-md-250">
-                    <img class="card-img-left flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" 
-                        alt="" style="width: 250px; height: 150px;" src="/media/image/share/course-python.jpg" data-holder-rendered="true">
-                    <div class="card-body d-flex flex-column align-items-start">                    
-                        <h3 class="mb-0">
-                            <a class="text-dark" href="#">Featured post</a>
-                        </h3>
-                        <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                        <p class="dark_grayish_cyan no_mb">Nov 12</p>
-                        <a href="#">Chi tiết <i class="fas fa-angle-double-right ml_5"></i></a>
-                    </div>                
-                </div>
-                <div class="card flex-md-row mb_10 box-shadow h-md-250">
-                    <img class="card-img-left flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" 
-                        alt="" style="width: 250px; height: 150px;" src="/media/image/share/course-python.jpg" data-holder-rendered="true">
-                    <div class="card-body d-flex flex-column align-items-start">                    
-                        <h3 class="mb-0">
-                            <a class="text-dark" href="#">Featured post</a>
-                        </h3>
-                        <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                        <p class="dark_grayish_cyan no_mb">Nov 12</p>
-                        <a href="#">Chi tiết <i class="fas fa-angle-double-right ml_5"></i></a>
-                    </div>                
-                </div>
-                <div class="card flex-md-row mb_10 box-shadow h-md-250">
-                    <img class="card-img-left flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" 
-                        alt="" style="width: 250px; height: 150px;" src="/media/image/share/course-python.jpg" data-holder-rendered="true">
-                    <div class="card-body d-flex flex-column align-items-start">                    
-                        <h3 class="mb-0">
-                            <a class="text-dark" href="#">Featured post</a>
-                        </h3>
-                        <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                        <p class="dark_grayish_cyan no_mb">Nov 12</p>
-                        <a href="#">Chi tiết <i class="fas fa-angle-double-right ml_5"></i></a>
-                    </div>                
-                </div>
-                <div class="card flex-md-row mb_10 box-shadow h-md-250">
-                    <img class="card-img-left flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" 
-                        alt="" style="width: 250px; height: 150px;" src="/media/image/share/course-python.jpg" data-holder-rendered="true">
-                    <div class="card-body d-flex flex-column align-items-start">                    
-                        <h3 class="mb-0">
-                            <a class="text-dark" href="#">Featured post</a>
-                        </h3>
-                        <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                        <p class="dark_grayish_cyan no_mb">Nov 12</p>
-                        <a href="#">Chi tiết <i class="fas fa-angle-double-right ml_5"></i></a>
-                    </div>                
-                </div>
+                {% endfor %}
                 {% if post_list.has_other_pages %}
                     <ul class="pagination">
                         {% if post_list.has_previous %}
-                            <li class="page-item"><a class="page-link" href="?page={{ users.previous_page_number }}">&laquo;</a></li>
+                            <li class="page-item"><a class="page-link" href="?page={{ post_list.previous_page_number }}">&laquo;</a></li>
                         {% else %}
                             <li class="disabled page-item"><span class="page-link">&laquo;</span></li>
                         {% endif %}
@@ -83,7 +37,7 @@
                             {% endif %}
                         {% endfor %}
                         {% if post_list.has_next %}
-                            <li class="page-item"><a class="page-link" href="?page={{ sponsor_list.next_page_number }}">&raquo;</a></li>
+                            <li class="page-item"><a class="page-link" href="?page={{ post_list.next_page_number }}">&raquo;</a></li>
                         {% else %}
                             <li class="disabled page-item"><span class="page-link">&raquo;</span></li>
                         {% endif %}
