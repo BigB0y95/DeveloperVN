@@ -149,7 +149,7 @@ video{
     border-top: 2px solid #AFAFAF;
 }
 .lesson_more, .subject_more{
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     width: 100%;
 }
 .les_row{

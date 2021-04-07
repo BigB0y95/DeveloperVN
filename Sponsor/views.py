@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from Home.models import Course as course_model 
+from Home.models import Course as course_model , Logo as logo_model
 from .models import Info_Account as info_acc_model, Sponsor as sponsor_model
 
 # Create your views here.
 def get_page_sponsor(request):
+    logo = logo_model.objects.filter(status=True)[0]
     # get course list
     course_list = course_model.objects.filter(status=True)
     info_account_list = info_acc_model.objects.filter(status = True)
@@ -19,4 +20,4 @@ def get_page_sponsor(request):
     except EmptyPage:
         sponsor = paginator.page(paginator.num_pages)
     
-    return render(request, 'pages/sponsor.html', {'course_list': course_list, 'info_account_list' : info_account_list, 'sponsor_list' : sponsor})
+    return render(request, 'pages/sponsor.html', {'course_list': course_list, 'info_account_list' : info_account_list, 'sponsor_list' : sponsor, 'logo':logo})

@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from Home.models import Course as course_model
+from Home.models import Course as course_model, Logo as logo_model
 from Posts.models import Posts as posts_model
 
 # Create get page share views.
 def get_page_share(request):
+    logo = logo_model.objects.filter(status=True)[0]
     # get list course with status is true
     course_list = course_model.objects.filter(status=True)
     # get list post with status is true
@@ -14,7 +15,7 @@ def get_page_share(request):
     # if have not post
     if post_list.count() == 0:
         message = "Xin lỗi! Chúng tôi đang tiến hành cập nhật bài viết"
-        return render(request, 'pages/Share.html',{'course_list' : course_list, 'message': message})
+        return render(request, 'pages/Share.html',{'course_list' : course_list, 'message': message, 'logo':logo})
     # if post exist
     else:
         # thực hiện phân trang
@@ -27,4 +28,4 @@ def get_page_share(request):
             posts = paginator.page(1)
         except EmptyPage:
             posts = paginator.page(paginator.num_pages)
-        return render(request, 'pages/Share.html',{'course_list' : course_list, 'post_list': posts, 'message': message})
+        return render(request, 'pages/Share.html',{'course_list' : course_list, 'post_list': posts, 'message': message, 'logo':logo})

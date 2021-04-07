@@ -25,8 +25,10 @@ class Logo(models.Model):
 class Banner(models.Model):
     banner_id = models.AutoField(primary_key=True)
     image = models.ImageField(upload_to = 'image/banner')
+    name=models.CharField(max_length=255, null=True, blank=True)
     createDate = models.DateField(auto_now_add=True)
+    priority = models.IntegerField()
     status = models.BooleanField(default=True)
 
     def __str__(self):
-        return f"{self.banner_id}, {self.image}, {self.createDate}, {self.status}"
+        return f"{self.banner_id}, {self.image}, {self.name} , {self.createDate}, {self.priority}, {self.status}"
