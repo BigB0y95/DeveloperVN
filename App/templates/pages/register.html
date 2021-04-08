@@ -4,7 +4,7 @@
 <!-- body -->
 {% block body %}
 <body class="text-center" style="background-image: url({% static 'image/background/sign_in.png' %})">
-    <form class="form-register" action="\dangkythanhvien" method="post">
+    <form class="form-register" action="\dangkythanhvien?path={{request.path}}" method="post" name="register">
         {% csrf_token %}
         <a href="\trangchu"><img class="mb-4" src="/media/{{logo.image}}" alt="DeveloperVietNam" title="DeveloperVietNam" width="72" height="72"></a>
         <h1 class="h3 mb-3 font-weight-normal">Đăng Ký Tài Khoản</h1>
@@ -18,12 +18,17 @@
         {% endif%}
         <p class="mt_t10 text-muted text-left nomargin_bottom">Nhập tên người dùng</p>
         <input type="text" id="userName" name="userName" class="form-control" placeholder="Tên người dùng" required="" maxlength = 25>
-        <p class="mt_t10 text-muted text-left nomargin_bottom">Nhập mật khẩu (6-20 ký tự)</p>
-        <input type="password" id="password" name="password" class="form-control" maxlength = 20 minlength = 6 placeholder="Mật Khẩu" required="">
-        <p class="mt_t10 text-muted text-left nomargin_bottom">Xác nhận mật khẩu</p>
-        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" maxlength = 20 minlength = 6 placeholder="Xác Nhận Mật Khẩu" required="">
+        {% if message_user != ''%}
         <div class="text-left">
-            <p class="red display_none" id="mes_err_pass1">Mật khẩu phải từ 6-20 ký tự!</p>
+            <p class="red" id="message_user">{{ message_user }}</p>
+        </div>
+        {% endif%}
+        <p class="mt_t10 text-muted text-left nomargin_bottom">Nhập mật khẩu (8-20 ký tự)</p>
+        <input type="password" id="password" name="password" class="form-control" maxlength=20 minlength=8 placeholder="Mật Khẩu" required="">
+        <p class="mt_t10 text-muted text-left nomargin_bottom">Xác nhận mật khẩu</p>
+        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" maxlength=20 minlength=8 placeholder="Xác Nhận Mật Khẩu" required="">
+        <div class="text-left">
+            <p class="red display_none" id="mes_err_pass1">Mật khẩu phải từ 8-20 ký tự!</p>
             <p class="red display_none" id="mes_err_pass2">Mật khẩu không khớp nhau!</p>
         </div>
         <button class="btn btn-lg btn-rs btn-block mt_t30 bold" id="register_btn" type="submit">Đăng Ký</button>
@@ -33,4 +38,6 @@
         <p class="mt-5 text-muted">© Bản quyền thuộc về <b>Developer Việt Nam</b>.<br>Thiết kế và hoàn thiện bởi <b>Developer Việt Nam</b>.</p>
     </form>
 </body>
+<script>
+</script>
 {% endblock %}
