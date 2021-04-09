@@ -4,31 +4,29 @@
 <!-- body -->
 {% block body %}
 <body class="text-center" style="background-image: url({% static 'image/background/sign_in.png' %})">
-    <form class="form-register" action="\dangkythanhvien?path={{request.path}}" method="post" name="register">
+    <form class="form-register" action="\dangkythanhvien?path={{request.path}}" method="post" id="form-register">
         {% csrf_token %}
         <a href="\trangchu"><img class="mb-4" src="/media/{{logo.image}}" alt="DeveloperVietNam" title="DeveloperVietNam" width="72" height="72"></a>
-        <h1 class="h3 mb-3 font-weight-normal">Đăng Ký Tài Khoản</h1>
-        <h1 class="h3 mb-3 font-weight-normal">Vui Lòng Điền Thông Tin</h1>
-        <p class="mt_t10 text-muted text-left nomargin_bottom">Nhập địa chỉ Email</p>
-        <input type="email" id="email" name="email" class="form-control" placeholder="Địa chỉ Email" required="" autofocus="">
-        {% if message_email != ''%}
-        <div class="text-left">
-            <p class="red" id="message_email">{{ message_email }}</p>
-        </div>
+        <h3 class="h3 mb-3 font-weight-normal">Vui Lòng Điền Thông Tin</h3>
+        <p class="mt_t10 text-muted text-left nomargin_bottom">Địa chỉ Email</p>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Địa chỉ Email" autofocus="">
+        {% if message_email != null %}
+            <div class="text-left">
+                <p class="red" id="message_email">{{ message_email }}</p>
+            </div>
         {% endif%}
-        <p class="mt_t10 text-muted text-left nomargin_bottom">Nhập tên người dùng</p>
-        <input type="text" id="userName" name="userName" class="form-control" placeholder="Tên người dùng" required="" maxlength = 25>
-        {% if message_user != ''%}
-        <div class="text-left">
-            <p class="red" id="message_user">{{ message_user }}</p>
-        </div>
+        <p class="mt_t10 text-muted text-left nomargin_bottom">Tên người dùng (Tối đa 25 ký tự)</p>
+        <input type="text" id="userName" name="userName" class="form-control" placeholder="Tên người dùng">
+        {% if message_user != null %}
+            <div class="text-left">
+                <p class="red" id="message_user">{{ message_user }}</p>
+            </div>
         {% endif%}
-        <p class="mt_t10 text-muted text-left nomargin_bottom">Nhập mật khẩu (8-20 ký tự)</p>
-        <input type="password" id="password" name="password" class="form-control" maxlength=20 minlength=8 placeholder="Mật Khẩu" required="">
+        <p class="mt_t10 text-muted text-left nomargin_bottom">Mật khẩu (8-20 ký tự bao gồm cả chữ và số)</p>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Mật khẩu" required="">
         <p class="mt_t10 text-muted text-left nomargin_bottom">Xác nhận mật khẩu</p>
-        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" maxlength=20 minlength=8 placeholder="Xác Nhận Mật Khẩu" required="">
+        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Xác nhận mật khẩu">
         <div class="text-left">
-            <p class="red display_none" id="mes_err_pass1">Mật khẩu phải từ 8-20 ký tự!</p>
             <p class="red display_none" id="mes_err_pass2">Mật khẩu không khớp nhau!</p>
         </div>
         <button class="btn btn-lg btn-rs btn-block mt_t30 bold" id="register_btn" type="submit">Đăng Ký</button>

@@ -7,13 +7,15 @@
     <form class="form-signin" action="\dangnhaptaikhoan?path={{path}}" method="post">
         {% csrf_token %}
         <a href="\trangchu"><img class="mb-4" src="/media/{{logo.image}}" alt="DeveloperVietNam" title="DeveloperVietNam" width="72" height="72"></a>
-        <h1 class="h3 mb-3 font-weight-normal">Vui Lòng Nhập Tài Khoản</h1>
+        <h3 class="h3 mb-3 font-weight-normal">Vui Lòng Nhập Tài Khoản</h3>
         <label for="account" class="sr-only">Tên người dùng/ Địa chỉ Email</label>
         <input type="text" id="account" name="account" class="form-control" placeholder="Tên người dùng/ Địa chỉ Email" required="" autofocus="">
         <label for="password" class="sr-only">Mật Khẩu</label>
         <input type="password" id="password" name="password" class="form-control" placeholder="Mật Khẩu" required="">
         <div class="text-left">
-            <p class="red">{{ message }}</p>
+            {% if message != null %}
+                <p class="red">{{ message }}</p>
+            {% endif %}
             <a href="#" class="blue">Quên mật khẩu?</a>
         </div>      
         <button class="btn btn-lg btn-rs btn-block mt_t30 bold" type="submit">Đăng Nhập</button>

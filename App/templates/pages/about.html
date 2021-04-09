@@ -55,7 +55,7 @@
                             </div>
 
                         {% elif user.username == ''%}
-                            <a type="button" class="btn btn-sm btn-rs text-while mr_5" href = "\dangky">Đăng Ký</a>
+                            <a type="button" class="btn btn-sm btn-rs text-while mr_5" href = "\dangky?path={{request.path}}">Đăng Ký</a>
                             <a type="button" class="btn btn-sm btn-rs text-while" href ="\dangnhap?path={{request.path}}">Đăng Nhập</a>
                         {% endif %}
                     </form>
