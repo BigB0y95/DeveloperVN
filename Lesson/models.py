@@ -7,7 +7,7 @@ class Lesson(models.Model):
     subject_id = models.ForeignKey(Subjects,default=None, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     content = models.TextField()
-    url = models.CharField(max_length=255)
+    url = models.TextField()
     image = models.ImageField(upload_to = 'image/lesson')
     time = models.CharField(max_length=20, null=True)
     views = models.IntegerField(default=0)

@@ -6,7 +6,7 @@ class Posts(models.Model):
     name = models.CharField(max_length=300)
     describe = models.CharField(max_length=1000)
     image = models.ImageField(upload_to= 'image/posts', null=True)
-    url = models.CharField(max_length=1000, null=True, blank=True)
+    url = models.TextField(null=True, blank=True)
     content = models.TextField()
     createDate = models.DateField(auto_now_add=True)
     url_name = models.CharField(max_length=350)

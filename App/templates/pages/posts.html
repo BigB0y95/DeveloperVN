@@ -12,8 +12,10 @@
                 <p>{{post.describe}}</p>
             </div>
             {% if post.url != null%}
-            <div class="video_post">
-                <video></video>
+            <div class="url text-center">
+                <div id="video_post">
+                    {{post.url|safe}}
+                </div>
             </div>
             {% endif %}
             <div class="content_post">
@@ -21,6 +23,20 @@
             </div>
         </section>
     </article>
+    <script>
+        $(window).resize(function() {
+            var get_width_post = $('#video_post').width();
+            var height_post = get_width_post/16*9;
+            var height_post_str = height_post.toString() + 'px';
+            $('#video_post').css("height" , height_post_str);
+        });
+        $(document).ready(function() {
+            var get_width_post = $('#video_post').width();
+            var height = get_width_post/16*9;
+            var height_str = height.toString() + 'px';
+            $('#video_post').css("height" , height_str);
+        });
+    </script>
 {% endblock %}
 <!-- aside -->
 {% block aside %}

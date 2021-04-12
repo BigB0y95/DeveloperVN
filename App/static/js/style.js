@@ -9,7 +9,6 @@ function scrollFunction() {
   }
 }
 
-
 $(document).ready(function() {
     // When the user clicks on the button, scroll to the top of the document
     $("#topBtn").click(function(event) {

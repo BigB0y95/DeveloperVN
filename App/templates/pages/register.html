@@ -4,7 +4,7 @@
 <!-- body -->
 {% block body %}
 <body class="text-center" style="background-image: url({% static 'image/background/sign_in.png' %})">
-    <form class="form-register" action="\dangkythanhvien?path={{request.path}}" method="post" id="form-register">
+    <form class="form-register" action="\dangkythanhvien?path={{path}}" method="post" id="form-register">
         {% csrf_token %}
         <a href="\trangchu"><img class="mb-4" src="/media/{{logo.image}}" alt="DeveloperVietNam" title="DeveloperVietNam" width="72" height="72"></a>
         <h3 class="h3 mb-3 font-weight-normal">Vui Lòng Điền Thông Tin</h3>
@@ -23,19 +23,14 @@
             </div>
         {% endif%}
         <p class="mt_t10 text-muted text-left nomargin_bottom">Mật khẩu (8-20 ký tự bao gồm cả chữ và số)</p>
-        <input type="password" id="password" name="password" class="form-control" placeholder="Mật khẩu" required="">
+        <input type="password" id="password" name="password" class="form-control" placeholder="Mật khẩu">
         <p class="mt_t10 text-muted text-left nomargin_bottom">Xác nhận mật khẩu</p>
         <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Xác nhận mật khẩu">
-        <div class="text-left">
-            <p class="red display_none" id="mes_err_pass2">Mật khẩu không khớp nhau!</p>
-        </div>
         <button class="btn btn-lg btn-rs btn-block mt_t30 bold" id="register_btn" type="submit">Đăng Ký</button>
         <div class="text-left mt_t10 bold">
-            <a href="\dangnhap" class="blue">Tôi đã có tài khoản!</a>
+            <a href="\dangnhap?path={{path}}" class="blue">Tôi đã có tài khoản!</a>
         </div>
         <p class="mt-5 text-muted">© Bản quyền thuộc về <b>Developer Việt Nam</b>.<br>Thiết kế và hoàn thiện bởi <b>Developer Việt Nam</b>.</p>
     </form>
 </body>
-<script>
-</script>
 {% endblock %}

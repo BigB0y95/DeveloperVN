@@ -105,8 +105,13 @@
                             <!-- textbox -->
                             <div class="textbox">
                                 <div class="textbox__image" style="background-image: url({% static 'image/background/yellow02.jpg' %})">
-                                    <a href="/khoahoc/{{course.course_id}}"><img src="/media/{{course.image}}" alt="{{course.name}}"></a>
-                                </div>
+									<div class="flip-box-inner">
+										<a href="/khoahoc/{{course.course_id}}"><img src="/media/{{course.image}}" alt="{{course.name}}"></a>
+									</div>
+									<div class="flip-box-back">
+										<a href="/khoahoc/{{course.course_id}}"><img src="/media/{{course.image}}" alt="{{course.name}}"></a>
+									</div>
+								</div>
                                 <div class="textbox__body">
                                     <h5 class="textbox__title"><a href="/khoahoc/{{course_list.course_id}}">{{course.name}}</a></h5>
                                 </div>

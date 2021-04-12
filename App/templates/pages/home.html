@@ -46,7 +46,12 @@
 							<!-- textbox -->
 							<div class="textbox">
 								<div class="textbox__image" style="background-image: url({% static 'image/background/yellow02.jpg' %})">
-									<a href="/khoahoc/{{course.course_id}}"><img src="/media/{{course.image}}" alt="{{course.name}}"></a>
+									<div class="flip-box-inner">
+										<a href="/khoahoc/{{course.course_id}}"><img src="/media/{{course.image}}" alt="{{course.name}}"></a>
+									</div>
+									<div class="flip-box-back">
+										<a href="/khoahoc/{{course.course_id}}"><img src="/media/{{course.image}}" alt="{{course.name}}"></a>
+									</div>
 								</div>
 								<div class="textbox__body">
 									<h2 class="textbox__title"><a href="/khoahoc/{{course_list.course_id}}">{{course.name}}</a></h2>
@@ -73,18 +78,6 @@
         <div class="container-fluid">
 				<div class="textbox-group">
 					<div class="row">
-						<div class="col-md-3 col-lg-3 mt_t20">									
-							<!-- textbox -->
-							<div class="textbox">
-								<div class="textbox__image" style="background-image: url({% static 'image/background/yellow02.jpg' %})">
-									<a href="#"><img src="{% static  'image/course/python.png' %}" alt="python"></a>
-								</div>
-								<div class="textbox__body">
-									<h2 class="textbox__title"><a href="#">Việc Làm IT Tại Nhà</a></h2>
-									<div class="textbox__description"><p class="bold">Đăng tin miễn phí và tìm kiếm việc làm thêm tại nhà</p></div>
-								</div>
-							</div><!-- End / textbox -->									
-						</div>
                         <div class="col-md-3 col-lg-3 mt_t20">									
 							<!-- textbox -->
 							<div class="textbox">

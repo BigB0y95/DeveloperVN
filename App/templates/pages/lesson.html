@@ -16,8 +16,10 @@
         <div class="title_lesson">
             <h5 class="strong_blue">{{lesson.name}}</h5>
         </div>
-        <div class="video_lesson">
-            <video></video>
+        <div class="url text-center">
+            <div id="video_lesson">
+                {{lesson.url|safe}}
+            </div>
         </div>
         <div class="info_lesson mt_t10 row_mr0">
             <div class="row_mr0">
@@ -75,9 +77,14 @@
                     <div class="row_mr0">
                         {% for course in course_list%}
                         <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 padding_10">
-                            <div class="textbox__image" style="background-image: url({% static 'image/background/yellow.jpg' %})">
-                                <a href="/khoahoc/{{course.course_id}}"><img src="/media/{{course.image}}" alt="{{course.name}}" title="{{course.name}}"></a>
-                            </div>
+                            <div class="textbox__image" style="background-image: url({% static 'image/background/yellow02.jpg' %})">
+								<div class="flip-box-inner">
+									<a href="/khoahoc/{{course.course_id}}"><img src="/media/{{course.image}}" alt="{{course.name}}"></a>
+								</div>
+								<div class="flip-box-back">
+									<a href="/khoahoc/{{course.course_id}}"><img src="/media/{{course.image}}" alt="{{course.name}}"></a>
+								</div>
+							</div>
                         </div>
                         {% endfor %}
                     </div>
@@ -145,6 +152,20 @@
         </div>
     </section>
 </article>
+<script>
+        $(window).resize(function() {
+            var get_width_lesson = $('#video_lesson').width();
+            var height_lesson = get_width_lesson/16*9;
+            var height_lesson_str = height_lesson.toString() + 'px';
+            $('#video_lesson').css("height" , height_lesson_str);
+        });
+        $(document).ready(function() {
+            var get_width_lesson = $('#video_lesson').width();
+            var height_lesson = get_width_lesson/16*9;
+            var height_lesson_str = height_lesson.toString() + 'px';
+            $('#video_lesson').css("height" , height_lesson_str);
+        });
+    </script>
 {% endblock %}
  <!-- aside -->
 {% block aside %}

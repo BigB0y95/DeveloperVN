@@ -47,7 +47,11 @@ section a:hover, aside a:hover{
     text-align: center;
     transition: all ease .3s;
 }
-.textbox__image img {
+/*.textbox__image img {
+    width: 100%;
+    transition: transform .2s;
+}*/
+.textbox__image{
     width: 100%;
 }
 img {
@@ -60,6 +64,30 @@ img {
     max-width: 100%;
     height: auto;
     border: 0px;
+}
+/*.textbox__image img:hover {
+    transform: scale(1.15);
+}*/
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.textbox__image:hover .flip-box-inner{
+    transform: rotateY(180deg);
+}
+.flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.flip-box-back {
+    transform: rotateY(180deg);
 }
 #banner_sub{
     margin-top: 58px; 
@@ -250,5 +278,15 @@ video{
 .error{
     text-align: left !important;
     color: red !important;
+    width: 100%;
+}
+.url{
+    width: 100%;
+    height: auto;
+}
+#video_post{
+    width: 85%;
+}
+#video_lesson{
     width: 100%;
 }

@@ -10,7 +10,8 @@ from Home.models import Logo as logo_model
 # Create your views here.
 def get_page_register(request):
     logo = logo_model.objects.filter(status=True)[0]
-    return render(request, 'pages/register.html',{'logo' : logo})
+    path = request.GET.get('path')
+    return render(request, 'pages/register.html',{'path' : path, 'logo' : logo})
 
 def get_page_login(request):
     logo = logo_model.objects.filter(status=True)[0]
@@ -23,7 +24,7 @@ def register(request):
         user_name = request.POST['userName']
         password = request.POST['password']
         path = request.GET.get('path')
-        if path == '' or path is not None:
+        if path == '':
             path = "/trangchu"   
         if not User.objects.filter(email= email).exists():
             if not User.objects.filter(username = user_name).exists():
@@ -44,21 +45,21 @@ def register(request):
 def login_user(request):
     account = request.POST['account']
     password = request.POST['password']
-    #member = member_model.objects.filter(email = account, password = password, status = True)
+
     try:
         user = authenticate(request, username = User.objects.get(email = account), password = password)
     except:
         user = authenticate(request, username = account, password = password)
     #user = EmailOrUsernameModelBackend.authenticate(request, account, password)
     path = request.GET.get('path')
-    if path == '' or path is not None:
+    if path == '':
         path = "/trangchu"
     if user is not None:
         login(request, user, backend='django.contrib.auth.backends.ModelBackend')
         return redirect(path ,{'user' : user})
     else:
         logo = logo_model.objects.filter(status=True)[0]
-        return render(request, 'pages/sign_in.html', {'message': 'Tài khoản hoặc mật khẩu không đúng', 'logo' : logo})
+        return render(request, 'pages/sign_in.html', {'message': 'Tài khoản hoặc mật khẩu không đúng', 'logo' : logo, 'path' : path})
 
 def logout_user(request):
     logout(request)
