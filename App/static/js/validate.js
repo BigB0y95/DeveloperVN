@@ -65,4 +65,35 @@ $(document).ready(function () {
             }
         }
     });
+    $('#form-change-pass').validate({
+        rules: {
+            currentPassword: {
+                required: true
+            },
+            newPassword: {
+                required: true,
+                minlength: 8,
+                maxlength: 20,
+                password_check: true,
+                specialChar_check: true
+            },
+            confirmPassword: {
+                equalTo: "#newPassword"
+            }
+        },
+        messages: {
+            currentPassword: {
+                required: "Mật khẩu hiện tại không được bỏ trống",
+            },
+            newPassword: {
+                required: "Mật khẩu mới không được bỏ trống",
+                minlength: "Mật khẩu mới phải ít nhất có 8 ký tự",
+                maxlength: "Mật khẩu mới tối đa 25 ký tự",
+                specialChar_check: "Mật khẩu mới không được phép có ký tự đặc biệt"
+            },
+            confirmPassword: {
+                equalTo: "Mật khẩu không khớp"
+            }
+        }
+    });
 });

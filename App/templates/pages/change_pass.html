@@ -1,6 +1,6 @@
 {% extends "base_sub.html" %}
 {% load static %}
-{% block title %}DangKy{% endblock %}
+{% block title %}Thay Đổi Mật Khẩu{% endblock %}
 <!-- body -->
 {% block body %}
     <body class="text-center" style="background-image: url({% static 'image/background/sign_in.png' %})">
@@ -10,6 +10,11 @@
         <h3 class="h3 mb-3 font-weight-normal">Thay đổi mật khẩu</h3>
         <p class="mt_t10 text-muted text-left nomargin_bottom">Mật khẩu hiện tại</p>
         <input type="password" id="currentPassword" name="currentPassword" class="form-control" placeholder="Mật khẩu hiện tại" autofocus="">
+        {% if message != null %}
+            <div class="text-left">
+                <p class="red">{{ message }}</p>
+            </div>
+        {% endif %}
         <p class="mt_t10 text-muted text-left nomargin_bottom">Mật khẩu mới</p>
         <input type="password" id="newPassword" name="newPassword" class="form-control" placeholder="Mật khẩu mới">
         <p class="mt_t10 text-muted text-left nomargin_bottom">Xác nhận mật khẩu</p>

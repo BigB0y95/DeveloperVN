@@ -1,0 +1,21 @@
+{% extends "base_sub.html" %}
+{% load static %}
+{% block title %}Kiểm Tra Mã Xác Nhận{% endblock %}
+<!-- body -->
+{% block body %}
+    <body class="text-center" style="background-image: url({% static 'image/background/sign_in.png' %})">
+    <form class="form-register" action="\guima?path={{path}}" method="post" id="form-change-pass">
+        {% csrf_token %}
+        <a href="\trangchu"><img class="mb-4" src="/media/{{logo.image}}" alt="DeveloperVietNam" title="DeveloperVietNam" width="72" height="72"></a>
+        <h3 class="h3 mb-3 font-weight-normal">Kiểm tra mã xác nhận</h3>
+        <p class="mt_t10 text-muted text-left nomargin_bottom">Nhập mã xác nhận</p>
+        <input type="text" id="codeNumber" name="codeNumber" class="form-control" placeholder="Mã xác nhận" autofocus="">
+        
+        {% if message != null %}
+            <div class="text-left">
+                <p class="red">{{ message }}</p>
+            </div>
+        {% endif %}
+
+        <button class="btn btn-lg btn-rs btn-block mt_t30 bold" id="change_pas_btn" type="submit">Xác nhận</button>
+{% endblock %}
