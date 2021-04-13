@@ -137,15 +137,18 @@ def sent_code(request):
         message = ''
         if User.objects.filter(email=email).exists():
             code_number = random.randint(100000, 999999)
+            #try:
             send_mail(
                 'Lấy lại mật khẩu',
-                code_number,
+                'Mã xác minh để lấy lại mật khẩu của bạn là:' + str(code_number),
                 'quangpc.developervietnam@gmail.com',
                 [email],
                 fail_silently=False
             )
             logo = logo_model.objects.filter(status=True)[0]
-            return render(request, 'pages/change_pass.html', {'path' : path, 'logo' : logo})
+            return render(request, 'pages/check_code.html', {'path' : path, 'logo' : logo})
+            #except:
+                #return render(request, 'pages/error.html')
         else:
             logo = logo_model.objects.filter(status=True)[0]
             message = 'Địa chỉ email không tồn tại'

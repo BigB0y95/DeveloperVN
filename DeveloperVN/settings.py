@@ -152,3 +152,13 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.media",
     "django.core.context_processors.request",
 )
+#Setting sent email (DataFlair)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+# port của gmail
+EMAIL_PORT = 587
+# tên tài khoản gmail
+EMAIL_HOST_USER = 'quangpc.developervietnam@gmail.com'
+# mật khẩu gmail
+EMAIL_HOST_PASSWORD = 'BigB0y@1995'
