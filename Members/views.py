@@ -140,7 +140,7 @@ def sent_code(request):
             #try:
             send_mail(
                 'Lấy lại mật khẩu',
-                'Mã xác minh để lấy lại mật khẩu của bạn là:' + str(code_number),
+                'Mã xác minh để lấy lại mật khẩu của bạn là: ' + str(code_number),
                 'quangpc.developervietnam@gmail.com',
                 [email],
                 fail_silently=False
@@ -151,8 +151,8 @@ def sent_code(request):
                 #return render(request, 'pages/error.html')
         else:
             logo = logo_model.objects.filter(status=True)[0]
-            message = 'Địa chỉ email không tồn tại'
-            return render(request, 'pages/change_pass.html', {'path' : path, 'logo' : logo,'message': message})
+            message = 'Email chưa đăng ký tài khoản'
+            return render(request, 'pages/password_retrieval.html', {'path' : path, 'logo' : logo,'message': message})
     else:
         return render(request, 'pages/error.html')
 
