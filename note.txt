@@ -2,3 +2,63 @@ icon phone:<i class="fas fa-phone-square-alt fs_xx-large"></i>
 icon gmail:<i class="fas fa-envelope-square fs_xx-large"></i>
 icon facebokk:<i class="fab fa-facebook-square fs_xx-large"></i>
 icon youtube: <i class="fab fa-youtube-square fs_xx-large"></i>
+
+1. để sử dụng MySql
+ - Cài đặt thư viện mysqlclient
+lệnh cài: pip install mysqlclient
+
+ - Cấu hình trong file setting.py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'DeveloperVN',
+        'USER': 'root',
+        'PASSWORD': '1234$',
+        'HOST': 'localhost',
+    }
+}
+
+2. Tạo super user
+$ python manage.py createsuperuser.
+
+3. để sử dụng class ImageField để upload ảnh (folder upload ảnh mặc định : media)
+ - cài đặt thư viện Pillow
+lệnh cài: pip install pillow
+
+ - Cấu hình file setting.py để khai báo folder media
+import os
+# Base url to serve media files
+MEDIA_URL = '/media/'
+# Path where media is stored
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+ - Cấu hình file url.py
+from django.conf.urls.static import static
+from django.conf import settings
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('App.urls'))   
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+4. thêm title cho table trong admin
+ - file admin.py của mỗi module
+# đăng ký bảng để hiển thị trong trang admin
+@admin.register(Course)
+# thêm title cho bảng
+class CourseAdmin(admin.ModelAdmin):
+    # liệt kê title
+    list_display = ("course_id", "name", "about", "content", "image", "dateCreate")
+
+5. Cấu hình để gửi mail
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+# tên tài khoản gmail
+EMAIL_HOST_USER = 'quangpc.developervietnam@gmail.com'
+# mật khẩu gmail
+EMAIL_HOST_PASSWORD = 'BigB0y@1995'
+
+6. CHỉnh giờ hệ thống là giờ Việt Nam
+ - cấu hình file setting.py
+TIME_ZONE = 'Asia/Ho_Chi_Minh'
